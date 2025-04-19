@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:retail_app/app/router/ss_route_utility.dart';
 import 'package:retail_app/core/presentation/pages/ss_base_widget.dart';
 
 import '../../../../app/router/ss_app_routes.dart';
@@ -32,9 +32,7 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           child: GestureDetector(
             onTap: () {
               debugPrint('Login Page Body tapped');
-              context.goNamed(
-                SSAppRoutes.foodHome.name,
-              );
+              context.goToPage(SSAppRoutes.foodHome);
             },
             child: Container(
                 color: Colors.cyan,

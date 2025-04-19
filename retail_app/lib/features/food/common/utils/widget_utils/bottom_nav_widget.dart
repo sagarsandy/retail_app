@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:retail_app/app/router/ss_route_utility.dart';
 import 'package:retail_app/core/presentation/widgets/ss_bottm_nav_bar.dart';
 
 import '../../../../../app/router/ss_app_routes.dart';
@@ -32,23 +32,19 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
     'Menu',
   ];
 
-  final List<String> _routes = [
-    SSAppRoutes.foodHome.name,
-    SSAppRoutes.foodFavourite.name,
-    SSAppRoutes.foodCart.name,
-    SSAppRoutes.foodOrders.name,
-    SSAppRoutes.foodMenu.name,
+  final List<SSRouteInfo> _routes = [
+    SSAppRoutes.foodHome,
+    SSAppRoutes.foodFavourite,
+    SSAppRoutes.foodCart,
+    SSAppRoutes.foodOrders,
+    SSAppRoutes.foodMenu,
   ];
 
   void _onItemTapped(int index) {
     debugPrint('click index=$index');
-    final String location = _routes[index];
-    context.goNamed(
+    final SSRouteInfo location = _routes[index];
+    context.goToPage(
       location,
-      extra: {
-        "key1": "value1",
-        "key2": "value2",
-      },
     );
   }
 

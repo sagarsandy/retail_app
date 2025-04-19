@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:retail_app/app/router/ss_route_utility.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
 
 import '../../../../../app/router/ss_app_routes.dart';
@@ -22,10 +22,7 @@ class _HomePageState extends State<HomePage> {
           Center(
             child: GestureDetector(
               onTap: () {
-                context.pushNamed(
-                  SSAppRoutes.foodDetails.name,
-                  extra: {},
-                );
+                context.pushToPage(SSAppRoutes.foodDetails);
               },
               child: Text(
                 'Home Page',

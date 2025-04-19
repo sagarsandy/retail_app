@@ -74,3 +74,28 @@ CustomTransitionPage buildRedirectingPage({
     ),
   );
 }
+
+extension BuildContextRouter on BuildContext {
+  void goToPage(
+    SSRouteInfo route, {
+    Map<String, dynamic>? extra,
+  }) {
+    goNamed(
+      route.name,
+      extra: {
+        ...?extra,
+      },
+    );
+  }
+
+  void pushToPage(
+    SSRouteInfo route, {
+    Map<String, dynamic>? extra,
+  }) {
+    pushNamed(route.name);
+  }
+
+  void popToPage() {
+    pop();
+  }
+}

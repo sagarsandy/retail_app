@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:retail_app/app/router/ss_route_utility.dart';
 import 'package:retail_app/app/theme/ss_core_font.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/core/presentation/widgets/ss_icon_button.dart';
@@ -45,7 +45,7 @@ class SSAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           if (onLeadingIconTap != null) {
             onLeadingIconTap!();
           }
-          context.pop();
+          context.popToPage();
         },
       ),
       actions: [
