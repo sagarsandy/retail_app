@@ -57,7 +57,7 @@ class SSBottomNavBar extends StatelessWidget {
                     child: Icon(
                       icons[index],
                       color:
-                          isSelected ? SSColors.primary4 : SSColors.secondary1,
+                          isSelected ? SSColors.primary2 : SSColors.secondary1,
                       size: isSelected ? 28 : 24,
                     ),
                   ),
@@ -66,7 +66,7 @@ class SSBottomNavBar extends StatelessWidget {
                     duration: const Duration(milliseconds: 1000),
                     curve: Curves.easeInOut,
                     style: Theme.of(context).textTheme.small(
-                          isSelected ? SSColors.primary4 : SSColors.secondary1,
+                          isSelected ? SSColors.primary2 : SSColors.secondary1,
                           fontWeight: isSelected
                               ? FontWeightType.extraBold
                               : FontWeightType.normal,

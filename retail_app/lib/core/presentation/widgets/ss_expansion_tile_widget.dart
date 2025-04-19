@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/app/theme/ss_core_font.dart';
+import 'package:retail_app/app/theme/ss_theme_ext.dart';
+
+import '../../../app/theme/ss_colors.dart';
 
 class SSExpansionTileWidget extends StatefulWidget {
   final String title;
@@ -18,7 +22,7 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
   @override
   Widget build(BuildContext context) {
     return AnimatedPhysicalModel(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 900),
       curve: Curves.easeInOut,
       elevation: _isExpanded ? 8.0 : 2.0,
       shape: BoxShape.rectangle,
@@ -34,9 +38,13 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
               hoverColor: Colors.transparent,
             ),
             child: ListTile(
-              title: Text(widget.title,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w500)),
+              title: Text(
+                widget.title,
+                style: Theme.of(context).textTheme.large(
+                      SSColors.black,
+                      fontWeight: FontWeightType.bold,
+                    ),
+              ),
               trailing: Icon(
                 _isExpanded ? Icons.expand_less : Icons.expand_more,
               ),
@@ -50,8 +58,10 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
           AnimatedCrossFade(
             firstChild: const SizedBox.shrink(),
             secondChild: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 2.0,
+                vertical: 2.0,
+              ),
               child: Column(
                 children: widget.children,
               ),
@@ -59,7 +69,7 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
             crossFadeState: _isExpanded
                 ? CrossFadeState.showSecond
                 : CrossFadeState.showFirst,
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 150),
           ),
         ],
       ),

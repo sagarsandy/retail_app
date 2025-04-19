@@ -128,7 +128,7 @@ class FloatingNavHomePageState extends State<FloatingNavHomePage> {
                     child: Icon(
                       _icons[index],
                       color:
-                          isSelected ? SSColors.primary4 : SSColors.secondary1,
+                          isSelected ? SSColors.primary2 : SSColors.secondary1,
                       size: isSelected ? 30 : 22,
                     ),
                   ),
@@ -138,7 +138,7 @@ class FloatingNavHomePageState extends State<FloatingNavHomePage> {
                     curve: Curves.easeInOut,
                     style: TextStyle(
                       color:
-                          isSelected ? SSColors.primary4 : SSColors.secondary1,
+                          isSelected ? SSColors.primary2 : SSColors.secondary1,
                       fontSize: 12,
                       fontWeight:
                           isSelected ? FontWeight.bold : FontWeight.normal,

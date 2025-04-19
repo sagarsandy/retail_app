@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           Center(
             child: GestureDetector(
               onTap: () {
-                context.goNamed(
+                context.pushNamed(
                   SSAppRoutes.foodDetails.name,
                   extra: {},
                 );
