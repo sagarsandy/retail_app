@@ -8,6 +8,7 @@ import '../../../../../core/presentation/widgets/ss_app_bar_widget.dart';
 import '../../../../../core/presentation/widgets/ss_page_loader_widget.dart';
 import '../../cubit/cafe_details_state.dart';
 import '../widgets/cafe_body_widget.dart';
+import '../widgets/cafe_cart_widget.dart';
 import '../widgets/favourite_icon_widget.dart';
 import 'cafe_details_page_helper.dart';
 
@@ -33,46 +34,34 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: const CafeCartWidget(),
       backgroundColor: SSColors.white,
       appBar: SSAppBarWidget(
         showTitle: _showTitle,
         title: "Silver Dum Biryani",
         trailingWidget: const FavouriteIconWidget(),
       ),
-      body: NotificationListener<ScrollNotification>(
-        onNotification: (scrollNotification) {
-          return _handleScrollEvent(scrollNotification);
+      body: BlocBuilder(
+        bloc: _cafeDetailsCubit,
+        builder: (context, state) {
+          switch (state) {
+            case CafeDetailsErrorState():
+              return const Center(child: Text("Error"));
+            case CafeDetailsLoadedState():
+              _showTitle = false;
+              return CafeBodyWidget(
+                cafeDetails: state.cafeDetails,
+                onFilterSelected: (String selectedFilter) {
+                  _cafeDetailsCubit.filterCafeItems(selectedFilter);
+                },
+              );
+            case CafeDetailsLoadingState():
+            default:
+              return const SSPageLoaderWidget();
+          }
         },
-        child: BlocBuilder(
-          bloc: _cafeDetailsCubit,
-          builder: (context, state) {
-            switch (state) {
-              case CafeDetailsErrorState():
-                return const Center(child: Text("Error"));
-              case CafeDetailsLoadedState():
-                _showTitle = false;
-                return CafeBodyWidget(
-                  cafeDetails: state.cafeDetails,
-                  onFilterSelected: (String selectedFilter) {
-                    _cafeDetailsCubit.filterCafeItems(selectedFilter);
-                  },
-                );
-              case CafeDetailsLoadingState():
-              default:
-                return const SSPageLoaderWidget();
-            }
-          },
-        ),
       ),
     );
-  }
-
-  bool _handleScrollEvent(ScrollNotification scrollNotification) {
-    bool showTitle =
-        _detailsPageHelper.showAppBarTitle(scrollNotification, _showTitle);
-    // setState(() {
-    //   _showTitle = showTitle;
-    // });
-    return false;
   }
 }

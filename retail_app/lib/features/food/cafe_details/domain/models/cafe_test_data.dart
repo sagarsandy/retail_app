@@ -18,9 +18,13 @@ class CafeTestData {
     isVeg: true,
     isNonVeg: false,
     isEgg: false,
+    cafeId: 'vj_1',
+    id: 'vj_1_bread_1',
   );
 
   final CafeItem cafeBreadItem2 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_bread_2',
     name: "Cheese Bread",
     description: "Delicious cheese bread with herbs",
     price: 120.0,
@@ -33,6 +37,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeDessertItem1 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_cake_1',
     name: "Chocolate Cake",
     description: "Delicious chocolate cake with cream",
     price: 250.0,
@@ -45,6 +51,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeDessertItem2 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_cake_2',
     name: "Vanilla Ice Cream",
     description: "Creamy vanilla ice cream",
     price: 100.0,
@@ -57,6 +65,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeChineseItem1 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_chinese_1',
     name: "Chicken Fried Rice",
     description: "Delicious chicken fried rice with spices",
     price: 150.0,
@@ -69,6 +79,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeChineseItem2 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_chinese_2',
     name: "Veg Fried Rice",
     description: "Delicious veg fried rice with spices",
     price: 120.0,
@@ -81,6 +93,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeChineseItem3 = CafeItem(
+    cafeId: 'vj_2',
+    id: 'vj_1_chinese_3',
     name: "Egg Fried Rice",
     description: "Delicious egg fried rice with spices",
     price: 130.0,
@@ -93,6 +107,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeBiryaniItem1 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_biryani_1',
     name: "Chicken Biryani",
     description: "Delicious chicken biryani with spices",
     price: 200.0,
@@ -105,6 +121,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeBiryaniItem2 = CafeItem(
+    cafeId: 'vj_1',
+    id: 'vj_1_biryani_2',
     name: "Veg Biryani",
     description: "Delicious veg biryani with spices",
     price: 150.0,
@@ -117,6 +135,8 @@ class CafeTestData {
   );
 
   final CafeItem cafeBiryaniItem3 = CafeItem(
+    cafeId: 'vj_2',
+    id: 'vj_1_biryani_3',
     name: "Egg Biryani",
     description: "Delicious egg biryani with spices",
     price: 180.0,

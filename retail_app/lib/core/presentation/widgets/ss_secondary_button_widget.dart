@@ -4,11 +4,11 @@ import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import '../../../app/theme/ss_colors.dart';
 import '../../../app/theme/ss_core_font.dart';
 
-class SSButtonWidget extends StatelessWidget {
+class SSSecondaryButtonWidget extends StatelessWidget {
   final String title;
   final Color? primaryColor;
   final Function() onTap;
-  const SSButtonWidget({
+  const SSSecondaryButtonWidget({
     super.key,
     required this.title,
     required this.onTap,
@@ -22,9 +22,10 @@ class SSButtonWidget extends StatelessWidget {
         onTap();
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: SSColors.action,
+        backgroundColor: SSColors.white.withOpacity(0.2),
         surfaceTintColor: SSColors.primary1, // Highlighted color
         padding: EdgeInsets.zero,
+        side: const BorderSide(color: SSColors.action, width: 2),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
@@ -33,8 +34,8 @@ class SSButtonWidget extends StatelessWidget {
       child: Text(
         title,
         style: Theme.of(context).textTheme.medium(
-              SSColors.white,
-              fontWeight: FontWeightType.extraBold,
+              SSColors.action,
+              fontWeight: FontWeightType.bold,
             ),
       ),
     );

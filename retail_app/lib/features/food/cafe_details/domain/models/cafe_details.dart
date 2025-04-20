@@ -51,6 +51,8 @@ class CafeItemCategory {
 }
 
 class CafeItem {
+  final String cafeId;
+  final String id;
   final String name;
   final String? description;
   final double price;
@@ -61,13 +63,15 @@ class CafeItem {
   final bool? isEgg;
 
   CafeItem({
+    required this.cafeId,
+    required this.id,
     required this.name,
     required this.description,
     required this.price,
     required this.originalPrice,
     this.isVeg = false,
     this.isNonVeg = true,
-    this.isEgg = true,
+    this.isEgg = false,
     this.imageUrl,
   });
 }

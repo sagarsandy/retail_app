@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/core/presentation/widgets/ss_button_widget.dart';
 import 'package:retail_app/core/presentation/widgets/ss_network_image_widget.dart';
+import 'package:retail_app/core/presentation/widgets/ss_secondary_button_widget.dart';
+import 'package:retail_app/di/service_locator.dart';
+import 'package:retail_app/features/food/cart/cubit/cafe_cart_cubit.dart';
 
 import '../../../domain/models/cafe_details.dart';
 
-class CafeItemDesignWidget extends StatelessWidget {
+class CafeItemDesignWidget extends StatefulWidget {
   final CafeItem cafeItem;
   const CafeItemDesignWidget({super.key, required this.cafeItem});
 
+  @override
+  State<CafeItemDesignWidget> createState() => _CafeItemDesignWidgetState();
+}
+
+class _CafeItemDesignWidgetState extends State<CafeItemDesignWidget> {
+  final CafeCartCubit _cafeCartCubit = locator<CafeCartCubit>();
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -20,7 +28,7 @@ class CafeItemDesignWidget extends StatelessWidget {
             // Background Image
             Positioned.fill(
               child: SSNetworkImageWidget(
-                imageUrl: cafeItem.imageUrl ?? "",
+                imageUrl: widget.cafeItem.imageUrl ?? "",
               ),
             ),
 
@@ -48,9 +56,11 @@ class CafeItemDesignWidget extends StatelessWidget {
                   ],
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: SSButtonWidget(
+                child: SSSecondaryButtonWidget(
                   title: "Add",
-                  onTap: () {},
+                  onTap: () {
+                    _addItemToCafeCart();
+                  },
                 ),
               ),
             ),
@@ -58,5 +68,9 @@ class CafeItemDesignWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _addItemToCafeCart() {
+    _cafeCartCubit.addToCart(widget.cafeItem);
   }
 }
