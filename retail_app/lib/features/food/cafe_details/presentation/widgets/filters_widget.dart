@@ -50,9 +50,9 @@ class FiltersWidgetState extends State<FiltersWidget> {
                 color: isSelected ? SSColors.action : SSColors.grey1,
               ), // purple border
             ),
-            selectedColor: Colors.transparent,
+            selectedColor: SSColors.transparent,
             checkmarkColor: isSelected ? SSColors.action : SSColors.black,
-            backgroundColor: Colors.transparent,
+            backgroundColor: SSColors.white,
             labelStyle: Theme.of(context).textTheme.regular(
                   isSelected ? SSColors.action : SSColors.black,
                   fontWeight: isSelected

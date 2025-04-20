@@ -27,7 +27,7 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
       elevation: _isExpanded ? 8.0 : 2.0,
       shape: BoxShape.rectangle,
       shadowColor: Colors.black,
-      color: Colors.white,
+      color: SSColors.surface,
       borderRadius: BorderRadius.circular(12),
       child: Column(
         children: [
@@ -60,7 +60,7 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
             secondChild: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 2.0,
-                vertical: 2.0,
+                vertical: 1.0,
               ),
               child: Column(
                 children: widget.children,

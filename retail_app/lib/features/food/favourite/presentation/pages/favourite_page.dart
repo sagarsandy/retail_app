@@ -21,14 +21,7 @@ class _FavouritePageState extends State<FavouritePage> {
               title: 'Favourite Page',
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: BottomNavWidget(
-              activeIndex: 1,
-            ),
-          ),
+          BottomNavWidget(activeIndex: 1),
         ],
       ),
     );

@@ -36,7 +36,7 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: const CafeCartWidget(),
-      backgroundColor: SSColors.white,
+      backgroundColor: SSColors.surface,
       appBar: SSAppBarWidget(
         showTitle: _showTitle,
         title: "Silver Dum Biryani",

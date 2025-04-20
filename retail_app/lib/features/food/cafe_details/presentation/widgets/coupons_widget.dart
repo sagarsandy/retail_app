@@ -65,6 +65,7 @@ class CouponsWidgetState extends State<CouponsWidget> {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Card(
+                  color: SSColors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),

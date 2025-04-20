@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../app/theme/ss_colors.dart';
 import '../../../../../core/presentation/widgets/ss_expansion_tile_widget.dart';
 import '../../domain/models/cafe_details.dart';
 import 'item/cafe_item_design_widget.dart';
@@ -39,9 +38,7 @@ class CafeItemsListWidget extends StatelessWidget {
                         cafeItemCategories[catIndex].cafeItems![index];
                     return Container(
                       height: 140,
-                      color: SSColors.white,
-                      margin: const EdgeInsets.only(
-                          bottom: 8.0, top: 8.0, right: 4.0),
+                      margin: const EdgeInsets.only(bottom: 8.0, right: 4.0),
                       child: Row(
                         children: [
                           CafeItemInfoWidget(cafeItem: cafeItem),

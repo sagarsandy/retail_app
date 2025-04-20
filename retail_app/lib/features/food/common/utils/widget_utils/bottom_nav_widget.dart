@@ -50,13 +50,18 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SSBottomNavBar(
-      icons: _icons,
-      titles: _titles,
-      selectedIndex: widget.activeIndex,
-      onItemTap: (index) {
-        _onItemTapped(index);
-      },
+    return Positioned(
+      bottom: 0,
+      left: 0,
+      right: 0,
+      child: SSBottomNavBar(
+        icons: _icons,
+        titles: _titles,
+        selectedIndex: widget.activeIndex,
+        onItemTap: (index) {
+          _onItemTapped(index);
+        },
+      ),
     );
   }
 }

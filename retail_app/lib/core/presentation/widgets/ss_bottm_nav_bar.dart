@@ -45,8 +45,11 @@ class SSBottomNavBar extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   horizontal: 10, vertical: isSelected ? 6 : 4),
               decoration: BoxDecoration(
-                color: isSelected ? SSColors.primary1 : SSColors.transparent,
                 borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  width: isSelected ? 2 : 0,
+                  color: isSelected ? SSColors.action : SSColors.transparent,
+                ),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -56,8 +59,7 @@ class SSBottomNavBar extends StatelessWidget {
                     curve: Curves.easeInOut,
                     child: Icon(
                       icons[index],
-                      color:
-                          isSelected ? SSColors.primary2 : SSColors.secondary1,
+                      color: isSelected ? SSColors.action : SSColors.action,
                       size: isSelected ? 28 : 24,
                     ),
                   ),
@@ -66,7 +68,7 @@ class SSBottomNavBar extends StatelessWidget {
                     duration: const Duration(milliseconds: 1000),
                     curve: Curves.easeInOut,
                     style: Theme.of(context).textTheme.small(
-                          isSelected ? SSColors.primary2 : SSColors.secondary1,
+                          isSelected ? SSColors.action : SSColors.action,
                           fontWeight: isSelected
                               ? FontWeightType.extraBold
                               : FontWeightType.normal,

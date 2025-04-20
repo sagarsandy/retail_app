@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SSColors {
+  static const Color surface = Color(0xFFF7F2FA);
   static const Color primary1 = Color(0xFFC5E5AD);
   static const Color primary2 = Color(0xFFC3E3AB);
   static const Color primary3 = Color(0xFFE1EFD2);
