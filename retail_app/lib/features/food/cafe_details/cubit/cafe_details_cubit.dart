@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retail_app/features/food/cafe_details/domain/use_case/cafe_details_use_case.dart';
+import 'package:retail_app/features/food/common/enums/food_type.dart';
 
 import '../domain/models/cafe_details.dart';
 import 'cafe_details_state.dart';
@@ -24,8 +25,8 @@ class CafeDetailsCubit extends Cubit<CafeDetailsState> {
     }
   }
 
-  Future<void> filterCafeItems(List<String> selectedFilters) async {
-    debugPrint("SS Selected filters are $selectedFilters");
+  Future<void> filterCafeItems(String selectedFilter) async {
+    debugPrint("SS Selected filter is $selectedFilter");
 
     if (cafeDetails == null ||
         cafeDetails?.cafeItemCategories == null ||
@@ -33,18 +34,15 @@ class CafeDetailsCubit extends Cubit<CafeDetailsState> {
       return;
     }
     emit(CafeDetailsLoadingState());
-    if (selectedFilters.isEmpty) {
+    if (selectedFilter == FoodType.all.title) {
       emit(CafeDetailsLoadedState(cafeDetails: cafeDetails!));
       return;
     }
 
-    selectedFilters =
-        selectedFilters.map((filter) => filter.toLowerCase()).toList();
-
     try {
-      bool isEgg = selectedFilters.contains("egg");
-      bool isVeg = selectedFilters.contains("veg");
-      bool isNonVeg = selectedFilters.contains("non-veg");
+      bool isEgg = selectedFilter == FoodType.egg.title;
+      bool isVeg = selectedFilter == FoodType.veg.title;
+      bool isNonVeg = selectedFilter == FoodType.nonVeg.title;
       final CafeDetails filteredCafeDetails =
           _cafeDetailsUseCase.filterCafeDetails(
         cafe: cafeDetails!,

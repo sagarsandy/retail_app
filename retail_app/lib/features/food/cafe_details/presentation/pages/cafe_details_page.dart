@@ -53,8 +53,8 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
                 _showTitle = false;
                 return CafeBodyWidget(
                   cafeDetails: state.cafeDetails,
-                  onFilterSelected: (List<String> selectedFilters) {
-                    _cafeDetailsCubit.filterCafeItems(selectedFilters);
+                  onFilterSelected: (String selectedFilter) {
+                    _cafeDetailsCubit.filterCafeItems(selectedFilter);
                   },
                 );
               case CafeDetailsLoadingState():

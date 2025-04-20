@@ -27,9 +27,9 @@ class CafeTestData {
     originalPrice: 150.0,
     imageUrl:
         "https://images.immediate.co.uk/production/volatile/sites/30/2024/02/Green-goddess-avocado-salad-a1d9a85.jpg",
-    isVeg: true,
+    isVeg: false,
     isNonVeg: false,
-    isEgg: false,
+    isEgg: true,
   );
 
   final CafeItem cafeDessertItem1 = CafeItem(
@@ -39,7 +39,7 @@ class CafeTestData {
     originalPrice: 300.0,
     imageUrl:
         "https://www.ghirne.com/wp-content/uploads/2024/11/thumb__700_0_0_0_auto.jpg",
-    isVeg: true,
+    isVeg: false,
     isNonVeg: false,
     isEgg: true,
   );
@@ -65,7 +65,7 @@ class CafeTestData {
         "https://www.ghirne.com/wp-content/uploads/2024/11/thumb__700_0_0_0_auto.jpg",
     isVeg: false,
     isNonVeg: true,
-    isEgg: true,
+    isEgg: false,
   );
 
   final CafeItem cafeChineseItem2 = CafeItem(
@@ -101,7 +101,7 @@ class CafeTestData {
         "https://www.ghirne.com/wp-content/uploads/2024/11/thumb__700_0_0_0_auto.jpg",
     isVeg: false,
     isNonVeg: true,
-    isEgg: true,
+    isEgg: false,
   );
 
   final CafeItem cafeBiryaniItem2 = CafeItem(

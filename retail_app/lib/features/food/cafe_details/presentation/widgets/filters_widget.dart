@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/theme/ss_core_font.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
+import 'package:retail_app/features/food/common/enums/food_type.dart';
 
 import '../../../../../app/theme/ss_colors.dart';
 
 class FiltersWidget extends StatefulWidget {
-  final Function(List<String>) onFilterSelected;
+  final Function(String) onFilterSelected;
   const FiltersWidget({super.key, required this.onFilterSelected});
 
   @override
@@ -13,13 +14,14 @@ class FiltersWidget extends StatefulWidget {
 }
 
 class FiltersWidgetState extends State<FiltersWidget> {
-  final List<String> filters = [
-    "Veg",
-    "Non-veg",
-    "Egg",
-  ];
+  final List<FoodType> filters = FoodType.values;
+  String? selectedFilter;
 
-  final Set<String> selectedFilters = {};
+  @override
+  initState() {
+    super.initState();
+    selectedFilter = filters.first.title;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +33,15 @@ class FiltersWidgetState extends State<FiltersWidget> {
         separatorBuilder: (_, __) => const SizedBox(width: 16),
         itemBuilder: (context, index) {
           final filter = filters[index];
-          final isSelected = selectedFilters.contains(filter);
+          final isSelected = selectedFilter == filter.title;
           return FilterChip(
-            label: Text(filter),
+            label: Text(filter.title),
             selected: isSelected,
             onSelected: (bool selected) {
               setState(() {
-                if (selected) {
-                  selectedFilters.add(filter);
-                } else {
-                  selectedFilters.remove(filter);
-                }
+                selectedFilter = filter.title;
               });
-              widget.onFilterSelected(selectedFilters.toList());
+              widget.onFilterSelected(selectedFilter!);
             },
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30), // more rounded

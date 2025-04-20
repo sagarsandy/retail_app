@@ -9,7 +9,7 @@ import 'filters_widget.dart';
 
 class CafeBodyWidget extends StatelessWidget {
   final CafeDetails cafeDetails;
-  final Function(List<String>) onFilterSelected;
+  final Function(String) onFilterSelected;
   const CafeBodyWidget({
     super.key,
     required this.cafeDetails,
@@ -38,7 +38,7 @@ class CafeBodyWidget extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             FiltersWidget(
-              onFilterSelected: (List<String> selectedFilters) {
+              onFilterSelected: (String selectedFilters) {
                 onFilterSelected(selectedFilters);
               },
             ),

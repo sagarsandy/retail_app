@@ -25,9 +25,9 @@ class CafeItemInfoWidget extends StatelessWidget {
                 size: 24,
                 color: cafeItem.isVeg!
                     ? Colors.green
-                    : cafeItem.isVeg!
-                        ? Colors.green
-                        : Colors.red,
+                    : cafeItem.isNonVeg!
+                        ? Colors.red
+                        : Colors.yellow,
               ),
               const SizedBox(height: 8),
               Text(

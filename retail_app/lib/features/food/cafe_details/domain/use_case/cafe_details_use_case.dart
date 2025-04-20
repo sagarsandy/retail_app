@@ -33,7 +33,9 @@ class CafeDetailsUseCase {
         // Filter items in each category based on flags
         final filteredItems = category.cafeItems?.where((item) {
           final matchVeg = isVeg == null || item.isVeg == isVeg;
-          return matchVeg;
+          final matchNonVeg = isNonVeg == null || item.isNonVeg == isNonVeg;
+          final matchEgg = isEgg == null || item.isEgg == isEgg;
+          return matchVeg && matchNonVeg && matchEgg;
         }).toList();
 
         return CafeItemCategory(
