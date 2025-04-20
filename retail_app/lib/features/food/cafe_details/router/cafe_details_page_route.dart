@@ -5,10 +5,10 @@ import '../../../../app/router/ss_app_routes.dart';
 import '../../../../app/router/ss_page_route.dart';
 import '../../../../app/router/ss_route_utility.dart';
 import '../../../../core/presentation/pages/ss_base_widget.dart';
-import '../presentation/pages/details_page.dart';
+import '../presentation/pages/cafe_details_page.dart';
 
-class DetailsPageRoute extends SSPageRoute {
-  const DetailsPageRoute(super.parentNavigatorKey);
+class CafeDetailsPageRoute extends SSPageRoute {
+  const CafeDetailsPageRoute(super.parentNavigatorKey);
 
   @override
   GoRoute getRoute() => GoRoute(
@@ -24,7 +24,7 @@ class DetailsPageRoute extends SSPageRoute {
             state: state,
             child: SSBaseWidget(
               title: "Food Details Page",
-              page: const DetailsPage(),
+              page: const CafeDetailsPage(),
             ),
           );
         },

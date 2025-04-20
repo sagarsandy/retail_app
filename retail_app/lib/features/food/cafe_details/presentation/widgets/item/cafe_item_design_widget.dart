@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/core/presentation/widgets/ss_button_widget.dart';
+import 'package:retail_app/core/presentation/widgets/ss_network_image_widget.dart';
 
-class ItemDesignWidget extends StatelessWidget {
-  const ItemDesignWidget({super.key});
+import '../../../domain/models/cafe_details.dart';
+
+class CafeItemDesignWidget extends StatelessWidget {
+  final CafeItem cafeItem;
+  const CafeItemDesignWidget({super.key, required this.cafeItem});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +19,8 @@ class ItemDesignWidget extends StatelessWidget {
           children: [
             // Background Image
             Positioned.fill(
-              child: Image.network(
-                'https://w7.pngwing.com/pngs/520/887/png-transparent-biryani-thumbnail.png',
-                fit: BoxFit.fill,
+              child: SSNetworkImageWidget(
+                imageUrl: cafeItem.imageUrl ?? "",
               ),
             ),
 
@@ -35,6 +38,16 @@ class ItemDesignWidget extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 5),
                 width: 70,
                 height: 30,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.7),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 child: SSButtonWidget(
                   title: "Add",
                   onTap: () {},

@@ -18,7 +18,7 @@ class SSExpansionTileWidget extends StatefulWidget {
 }
 
 class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
-  bool _isExpanded = false;
+  bool _isExpanded = true;
   @override
   Widget build(BuildContext context) {
     return AnimatedPhysicalModel(

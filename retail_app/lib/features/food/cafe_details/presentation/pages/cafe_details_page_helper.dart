@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DetailsPageHelper {
+class CafeDetailsPageHelper {
   bool showAppBarTitle(ScrollNotification scrollNotification, bool showTitle) {
     if (scrollNotification.metrics.axis == Axis.vertical &&
         scrollNotification.metrics.pixels > 50 &&

@@ -1,4 +1,3 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:retail_app/app/theme/ss_colors.dart';
@@ -181,36 +180,6 @@ class BottomFlex extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingNavHomePage(
       index: index,
-    );
-    return ConvexAppBar(
-      curveSize: 10,
-      curve: Curves.easeInOutCirc,
-      style: TabStyle.reactCircle,
-      elevation: 4,
-      backgroundColor: Colors.black.withOpacity(0.6),
-      shadowColor: Colors.black54,
-      activeColor: Colors.white,
-      color: Colors.black,
-      height: 60,
-      items: const [
-        TabItem(icon: Icons.home, title: 'Home'),
-        TabItem(icon: Icons.calendar_today, title: 'Order'),
-        TabItem(icon: Icons.assessment, title: 'Cart'),
-        TabItem(icon: Icons.list, title: 'Profile'),
-        TabItem(icon: Icons.search, title: 'Search'),
-      ],
-      initialActiveIndex: index,
-      onTap: (int i) {
-        debugPrint('click index=$i');
-        final String location = SSAppRoutes.values[i].name;
-        context.goNamed(
-          location,
-          extra: {
-            "key1": "value1",
-            "key2": "value2",
-          },
-        );
-      },
     );
   }
 }

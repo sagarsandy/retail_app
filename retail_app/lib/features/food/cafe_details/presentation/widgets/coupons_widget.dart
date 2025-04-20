@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:retail_app/app/theme/ss_colors.dart';
 import 'package:retail_app/app/theme/ss_core_font.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
+import 'package:retail_app/features/food/cafe_details/domain/models/cafe_details.dart';
 
 class CouponsWidget extends StatefulWidget {
-  const CouponsWidget({super.key});
+  final List<CafeCoupon> cafeCoupons;
+  const CouponsWidget({super.key, required this.cafeCoupons});
 
   @override
   CouponsWidgetState createState() => CouponsWidgetState();
@@ -17,13 +19,6 @@ class CouponsWidgetState extends State<CouponsWidget> {
   int _currentPage = 0;
   late Timer _timer;
 
-  final List<Map<String, String>> coupons = [
-    {"title": "10% OFF", "subtitle": "Use code SS10"},
-    {"title": "20% OFF", "subtitle": "Use code SS20"},
-    {"title": "15% OFF", "subtitle": "Use code SS15"},
-    {"title": "30% OFF", "subtitle": "Use code SS30"},
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -32,7 +27,7 @@ class CouponsWidgetState extends State<CouponsWidget> {
 
   void _startAutoScroll() {
     _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      int nextPage = (_currentPage + 1) % coupons.length;
+      int nextPage = (_currentPage + 1) % widget.cafeCoupons.length;
       _pageController.animateToPage(
         nextPage,
         duration: const Duration(milliseconds: 500),
@@ -50,20 +45,23 @@ class CouponsWidgetState extends State<CouponsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.cafeCoupons.isEmpty) {
+      return const SizedBox.shrink();
+    }
     return Column(
       children: [
         SizedBox(
           height: 80,
           child: PageView.builder(
             controller: _pageController,
-            itemCount: coupons.length,
+            itemCount: widget.cafeCoupons.length,
             onPageChanged: (index) {
               setState(() {
                 _currentPage = index;
               });
             },
             itemBuilder: (context, index) {
-              final coupon = coupons[index];
+              final coupon = widget.cafeCoupons[index];
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Card(
@@ -77,17 +75,30 @@ class CouponsWidgetState extends State<CouponsWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          coupon["title"] ?? "",
+                          coupon.couponTitle,
                           style: Theme.of(context).textTheme.large(
                                 SSColors.black,
                                 fontWeight: FontWeightType.bold,
                               ),
                         ),
-                        Text(
-                          coupon["subtitle"] ?? "",
-                          style: Theme.of(context).textTheme.medium(
-                                SSColors.black,
-                              ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Use code : ",
+                              style: Theme.of(context).textTheme.medium(
+                                    SSColors.black,
+                                  ),
+                            ),
+                            Text(
+                              coupon.couponCode,
+                              style: Theme.of(context).textTheme.medium(
+                                    SSColors.black,
+                                    fontWeight: FontWeightType.extraBold,
+                                  ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -98,10 +109,10 @@ class CouponsWidgetState extends State<CouponsWidget> {
           ),
         ),
         const SizedBox(height: 4),
-        if (coupons.length > 1)
+        if (widget.cafeCoupons.length > 1)
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(coupons.length, (index) {
+            children: List.generate(widget.cafeCoupons.length, (index) {
               return AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
                 margin: const EdgeInsets.symmetric(horizontal: 4),

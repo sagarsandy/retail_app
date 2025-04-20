@@ -1,24 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
+import 'package:retail_app/features/food/cafe_details/domain/models/cafe_details.dart';
 
 import '../../../../../app/theme/ss_colors.dart';
 import '../../../../../app/theme/ss_core_font.dart';
 
-class InfoWidget extends StatelessWidget {
-  final String title;
-  final String location;
-  final String deliveryTime;
-  final String openTime;
-  final String closeTime;
+class CafeInfoWidget extends StatelessWidget {
+  final CafeDetails cafeDetails;
 
-  const InfoWidget({
-    super.key,
-    required this.title,
-    required this.location,
-    required this.deliveryTime,
-    required this.openTime,
-    required this.closeTime,
-  });
+  const CafeInfoWidget({super.key, required this.cafeDetails});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +20,7 @@ class InfoWidget extends StatelessWidget {
         children: [
           const SizedBox(height: 8),
           Text(
-            title,
+            cafeDetails.name,
             style: Theme.of(context).textTheme.custom(
                   SSColors.black,
                   fontSize: 22,
@@ -42,7 +32,7 @@ class InfoWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                location,
+                cafeDetails.address,
                 style: Theme.of(context).textTheme.regular(
                       SSColors.black2,
                     ),
@@ -55,7 +45,7 @@ class InfoWidget extends StatelessWidget {
                     color: SSColors.grey1,
                   ),
                   Text(
-                    deliveryTime,
+                    cafeDetails.deliveryTime,
                     style: Theme.of(context).textTheme.medium(
                           SSColors.black2,
                         ),
@@ -66,7 +56,7 @@ class InfoWidget extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            "Open: $openTime - Close: $closeTime",
+            "Open: ${cafeDetails.openTime} - Close: ${cafeDetails.closeTime}",
             style: Theme.of(context).textTheme.regular(
                   SSColors.black2,
                 ),

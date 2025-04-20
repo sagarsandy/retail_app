@@ -3,9 +3,11 @@ import 'package:retail_app/app/theme/ss_core_font.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
 
 import '../../../../../../app/theme/ss_colors.dart';
+import '../../../domain/models/cafe_details.dart';
 
-class ItemInfoWidget extends StatelessWidget {
-  const ItemInfoWidget({super.key});
+class CafeItemInfoWidget extends StatelessWidget {
+  final CafeItem cafeItem;
+  const CafeItemInfoWidget({super.key, required this.cafeItem});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +20,18 @@ class ItemInfoWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
+              Icon(
                 Icons.square,
                 size: 24,
-                color: Colors.green,
+                color: cafeItem.isVeg!
+                    ? Colors.green
+                    : cafeItem.isVeg!
+                        ? Colors.green
+                        : Colors.red,
               ),
               const SizedBox(height: 8),
               Text(
-                "Chicken Biryani, i will be cooking it soon!. Let's wait for my signal",
+                cafeItem.name,
                 maxLines: 2,
                 style: Theme.of(context).textTheme.medium(
                       SSColors.black3,
@@ -35,7 +41,7 @@ class ItemInfoWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "₹200",
+                    "₹${cafeItem.originalPrice}",
                     style: Theme.of(context).textTheme.medium(
                           SSColors.black,
                           isStrikeThrough: true,
@@ -43,7 +49,7 @@ class ItemInfoWidget extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   Text(
-                    "₹199",
+                    "₹${cafeItem.price}",
                     style: Theme.of(context).textTheme.extraLarge(
                           SSColors.black,
                           fontWeight: FontWeightType.bold,

@@ -5,7 +5,8 @@ import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import '../../../../../app/theme/ss_colors.dart';
 
 class FiltersWidget extends StatefulWidget {
-  const FiltersWidget({super.key});
+  final Function(List<String>) onFilterSelected;
+  const FiltersWidget({super.key, required this.onFilterSelected});
 
   @override
   FiltersWidgetState createState() => FiltersWidgetState();
@@ -42,6 +43,7 @@ class FiltersWidgetState extends State<FiltersWidget> {
                   selectedFilters.remove(filter);
                 }
               });
+              widget.onFilterSelected(selectedFilters.toList());
             },
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30), // more rounded
