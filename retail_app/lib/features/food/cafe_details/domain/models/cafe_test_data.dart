@@ -178,7 +178,7 @@ class CafeTestData {
 
     final CafeDetails cafeDetails = CafeDetails(
       id: "vj_1",
-      name: "Silver Sum Biryani",
+      name: "Silver Dum Biryani",
       address: "Panta kaluva road, Vijayawada",
       deliveryTime: "20-30mnts",
       openTime: "10am",

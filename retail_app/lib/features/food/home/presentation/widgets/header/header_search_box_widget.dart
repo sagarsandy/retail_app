@@ -11,7 +11,7 @@ class HeaderSearchBoxWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
-        height: 50,
+        height: 45,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
           color: SSColors.white,
