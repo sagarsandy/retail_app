@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retail_app/di/service_locator.dart';
 import 'package:retail_app/features/food/cafe_details/cubit/cafe_details_cubit.dart';
+import 'package:retail_app/features/food/common/model/cafe.dart';
 
 import '../../../../../app/theme/ss_colors.dart';
 import '../../../../../core/presentation/widgets/ss_app_bar_widget.dart';
@@ -10,10 +11,10 @@ import '../../cubit/cafe_details_state.dart';
 import '../widgets/cafe_body_widget.dart';
 import '../widgets/cafe_cart_widget.dart';
 import '../widgets/favourite_icon_widget.dart';
-import 'cafe_details_page_helper.dart';
 
 class CafeDetailsPage extends StatefulWidget {
-  const CafeDetailsPage({super.key});
+  final Cafe? cafe;
+  const CafeDetailsPage({super.key, this.cafe});
 
   @override
   State<CafeDetailsPage> createState() => _CafeDetailsPageState();
@@ -21,25 +22,36 @@ class CafeDetailsPage extends StatefulWidget {
 
 class _CafeDetailsPageState extends State<CafeDetailsPage> {
   bool _showTitle = false;
-  final CafeDetailsPageHelper _detailsPageHelper = CafeDetailsPageHelper();
   final CafeDetailsCubit _cafeDetailsCubit = locator<CafeDetailsCubit>();
 
   @override
   initState() {
     super.initState();
     _showTitle = true;
-    _cafeDetailsCubit.fetchCafeDetails("vj_1");
+    if (widget.cafe != null) {
+      _cafeDetailsCubit.fetchCafeDetails(widget.cafe!.id);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    if (widget.cafe == null) {
+      return Scaffold(
+        backgroundColor: SSColors.surface,
+        appBar: SSAppBarWidget(
+          showTitle: _showTitle,
+          title: "Cafe not found",
+        ),
+        body: const Center(child: Text("Cafe not found")),
+      );
+    }
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: const CafeCartWidget(),
       backgroundColor: SSColors.surface,
       appBar: SSAppBarWidget(
         showTitle: _showTitle,
-        title: "Silver Dum Biryani",
+        title: widget.cafe!.name,
         trailingWidget: const FavouriteIconWidget(),
       ),
       body: BlocBuilder(
@@ -47,7 +59,7 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
         builder: (context, state) {
           switch (state) {
             case CafeDetailsErrorState():
-              return const Center(child: Text("Error"));
+              return const Center(child: Text("Cafe not found"));
             case CafeDetailsLoadedState():
               _showTitle = false;
               return CafeBodyWidget(

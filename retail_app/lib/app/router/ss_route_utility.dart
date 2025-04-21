@@ -92,7 +92,9 @@ extension BuildContextRouter on BuildContext {
     SSRouteInfo route, {
     Map<String, dynamic>? extra,
   }) {
-    pushNamed(route.name);
+    pushNamed(route.name, extra: {
+      ...?extra,
+    });
   }
 
   void popToPage() {

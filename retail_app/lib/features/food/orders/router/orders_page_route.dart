@@ -12,8 +12,8 @@ class OrdersPageRoute extends SSPageRoute {
 
   @override
   GoRoute getRoute() => GoRoute(
-        name: SSAppRoutes.foodOrders.name,
-        path: SSAppRoutes.foodOrders.navigationPath,
+        name: SSAppRoutes.cafeOrders.name,
+        path: SSAppRoutes.cafeOrders.navigationPath,
         parentNavigatorKey: parentNavigatorKey,
         redirect: (context, state) {
           return null;

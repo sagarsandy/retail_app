@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:retail_app/app/theme/ss_colors.dart';
 import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/core/ext/string_ext.dart';
+import 'package:retail_app/features/food/common/model/food_category.dart';
 
-class CategoryItemWidget extends StatelessWidget {
-  const CategoryItemWidget({super.key});
+class FoodCategoryItemWidget extends StatelessWidget {
+  final FoodCategory foodCategory;
+  const FoodCategoryItemWidget({super.key, required this.foodCategory});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,9 @@ class CategoryItemWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(50),
-              image: const DecorationImage(
+              image: DecorationImage(
                 image: CachedNetworkImageProvider(
-                  "https://www.ghirne.com/wp-content/uploads/2024/11/thumb__700_0_0_0_auto.jpg",
+                  foodCategory.imageUrl,
                 ),
                 fit: BoxFit.cover,
               ),
@@ -37,7 +39,7 @@ class CategoryItemWidget extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(
-            'Shawarma'.fitText(length: 11),
+            foodCategory.name.fitText(length: 11),
             style: Theme.of(context).textTheme.regular(SSColors.black),
           ),
         ],

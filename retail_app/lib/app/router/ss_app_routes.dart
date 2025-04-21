@@ -16,11 +16,11 @@ enum SSAppRoutes implements SSRouteInfo {
   test5('test5', 'test5'),
   login('login', 'login'),
   foodHome('foodHome', 'foodHome'),
-  foodDetails('foodDetails', 'foodDetails'),
-  foodFavourite('foodFavourite', 'foodFavorite'),
-  foodCart('foodCart', 'foodCart'),
-  foodOrders('foodOrders', 'foodOrders'),
-  foodMenu('foodMenu', 'foodMenu'),
+  cafeDetails('cafeDetails', 'cafeDetails'),
+  cafeFavourite('cafeFavourite', 'cafeFavourite'),
+  cafeCart('cafeCart', 'cafeCart'),
+  cafeOrders('cafeOrders', 'cafeOrders'),
+  cafeOptionsMenu('cafeOptionsMenu', 'cafeOptionsMenu'),
   signUp('signup', 'signup');
 
   @override

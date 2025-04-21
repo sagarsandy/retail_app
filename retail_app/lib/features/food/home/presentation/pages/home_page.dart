@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/features/food/home/presentation/widgets/category/category_widget.dart';
 import 'package:retail_app/features/food/home/presentation/widgets/explore_top_cafe/explore_top_cafes_widget.dart';
 import 'package:retail_app/features/food/home/presentation/widgets/offers_widget.dart';
 import 'package:retail_app/features/food/home/presentation/widgets/recommended/recommended_widget.dart';
 import 'package:retail_app/features/food/home/presentation/widgets/title_widget.dart';
 
 import '../../../common/utils/widget_utils/bottom_nav_widget.dart';
+import '../widgets/food_category/food_category_widget.dart';
 import '../widgets/header/home_header_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 const HomeHeaderWidget(),
                 OffersWidget(offers: offers),
                 const RecommendedWidget(),
-                const CategoryWidget(),
+                const FoodCategoryWidget(),
                 const SliverToBoxAdapter(
                   child: SizedBox(
                     height: 30,

@@ -34,10 +34,10 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
 
   final List<SSRouteInfo> _routes = [
     SSAppRoutes.foodHome,
-    SSAppRoutes.foodFavourite,
-    SSAppRoutes.foodCart,
-    SSAppRoutes.foodOrders,
-    SSAppRoutes.foodMenu,
+    SSAppRoutes.cafeFavourite,
+    SSAppRoutes.cafeCart,
+    SSAppRoutes.cafeOrders,
+    SSAppRoutes.cafeOptionsMenu,
   ];
 
   void _onItemTapped(int index) {

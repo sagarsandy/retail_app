@@ -22,7 +22,7 @@ class SSAppSwitchWidget extends StatelessWidget {
           size: 28.0,
         ),
         onPressed: () {
-          context.pushToPage(SSAppRoutes.foodDetails);
+          context.pushToPage(SSAppRoutes.cafeDetails);
         },
       ),
     );

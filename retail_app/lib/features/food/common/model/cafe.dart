@@ -6,6 +6,8 @@ class Cafe {
   final String openTime;
   final String closeTime;
   final bool isAvailableNow;
+  final String category;
+  final String? imageUrl;
   final String? phoneNumber;
   final double? rating;
 
@@ -16,8 +18,10 @@ class Cafe {
     required this.deliveryTime,
     required this.openTime,
     required this.closeTime,
+    required this.category,
+    this.imageUrl,
     this.isAvailableNow = true,
-    required this.phoneNumber,
-    required this.rating,
+    this.phoneNumber,
+    this.rating,
   });
 }

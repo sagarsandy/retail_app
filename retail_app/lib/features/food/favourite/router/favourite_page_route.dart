@@ -12,8 +12,8 @@ class FavouritePageRoute extends SSPageRoute {
 
   @override
   GoRoute getRoute() => GoRoute(
-        name: SSAppRoutes.foodFavourite.name,
-        path: SSAppRoutes.foodFavourite.navigationPath,
+        name: SSAppRoutes.cafeFavourite.name,
+        path: SSAppRoutes.cafeFavourite.navigationPath,
         parentNavigatorKey: parentNavigatorKey,
         redirect: (context, state) {
           return null;

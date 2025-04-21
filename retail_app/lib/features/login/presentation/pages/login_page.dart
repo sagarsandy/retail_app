@@ -32,7 +32,7 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           child: GestureDetector(
             onTap: () {
               debugPrint('Login Page Body tapped');
-              context.goToPage(SSAppRoutes.foodHome);
+              context.pushToPage(SSAppRoutes.foodHome);
             },
             child: Container(
                 color: Colors.cyan,
