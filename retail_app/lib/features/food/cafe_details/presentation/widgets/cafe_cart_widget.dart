@@ -22,7 +22,11 @@ class _CafeCartWidgetState extends State<CafeCartWidget> {
         bloc: _cafeCartCubit,
         listener: (context, state) {
           if (state is CafeCartErrorState) {
-            showCustomToast(context, state.message, ToastType.error);
+            SSToast.showToast(
+              context: context,
+              message: state.message,
+              type: ToastType.error,
+            );
           }
         },
         builder: (context, state) {

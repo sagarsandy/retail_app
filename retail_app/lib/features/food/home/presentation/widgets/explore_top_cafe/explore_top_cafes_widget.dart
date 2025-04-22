@@ -24,24 +24,25 @@ class _ExploreTopCafesWidgetState extends State<ExploreTopCafesWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder(
-        bloc: exploreCafeCubit,
-        builder: (context, state) {
-          if (state is ExploreCafeLoadedState) {
-            return SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return ExploreCafeListItemWidget(cafe: state.cafes[index]);
-                },
-                childCount: state.cafes.length, // This can be dynamic
-              ),
-            );
-          }
-          return const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 30.0),
-              child: SizedBox.shrink(),
+      bloc: exploreCafeCubit,
+      builder: (context, state) {
+        if (state is ExploreCafeLoadedState) {
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return ExploreCafeListItemWidget(cafe: state.cafes[index]);
+              },
+              childCount: state.cafes.length, // This can be dynamic
             ),
           );
-        });
+        }
+        return const SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 30.0),
+            child: SizedBox.shrink(),
+          ),
+        );
+      },
+    );
   }
 }

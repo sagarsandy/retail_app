@@ -43,7 +43,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
   void _onItemTapped(int index) {
     debugPrint('click index=$index');
     final SSRouteInfo location = _routes[index];
-    context.goToPage(
+    context.pushToPage(
       location,
     );
   }

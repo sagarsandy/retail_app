@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
 import 'package:retail_app/core/presentation/pages/ss_base_widget.dart';
+import 'package:retail_app/features/login/service/post_login_service.dart';
 
 import '../../../../app/router/ss_app_routes.dart';
 
@@ -21,6 +22,7 @@ class LoginPageBody extends StatefulWidget {
 }
 
 class _LoginPageBodyState extends State<LoginPageBody> {
+  final PostLoginService postLoginService = PostLoginService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +34,7 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           child: GestureDetector(
             onTap: () {
               debugPrint('Login Page Body tapped');
+              postLoginService.postLogin();
               context.pushToPage(SSAppRoutes.foodHome);
             },
             child: Container(

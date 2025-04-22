@@ -14,7 +14,7 @@ class HomeHeaderWidget extends StatelessWidget {
         child: SizedBox(
           height: 175,
           child: Padding(
-            padding: EdgeInsets.only(top: 50),
+            padding: EdgeInsets.only(top: 40),
             child: Column(
               children: [
                 SizedBox(

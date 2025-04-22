@@ -1,4 +1,5 @@
 import 'package:retail_app/di/service_locator.dart';
+import 'package:retail_app/features/food/favourite/presentation/cubit/favourite_cubit.dart';
 import 'package:retail_app/features/food/home/cubit/explore/explore_cafe_cubit.dart';
 import 'package:retail_app/features/food/home/cubit/food_category/food_category_cubit.dart';
 import 'package:retail_app/features/food/home/cubit/recommended/recommended_cafe_cubit.dart';
@@ -8,6 +9,7 @@ import '../features/food/cart/cubit/cafe_cart_cubit.dart';
 
 Future<void> registerCubits() async {
   _registerFoodCategoryCubit();
+  _registerFavouriteCubit();
   _registerRecommendedCafeCubit();
   _registerExploreCafeCubit();
   _registerCafeDetailsCubit();
@@ -17,6 +19,12 @@ Future<void> registerCubits() async {
 void _registerFoodCategoryCubit() {
   locator.registerLazySingleton<FoodCategoryCubit>(
     () => FoodCategoryCubit(locator.get()),
+  );
+}
+
+void _registerFavouriteCubit() {
+  locator.registerLazySingleton<FavouriteCubit>(
+    () => FavouriteCubit(locator.get()),
   );
 }
 

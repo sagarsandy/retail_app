@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 
 enum ToastType { info, success, warning, error }
 
+class SSToast {
+  static void showToast({
+    required String message,
+    required BuildContext context,
+    ToastType type = ToastType.info,
+  }) {
+    showCustomToast(context, message, type);
+  }
+}
+
 void showCustomToast(BuildContext context, String message, ToastType type) {
   final overlay = Overlay.of(context);
   late OverlayEntry overlayEntry; // late so we can use it inside onClose
