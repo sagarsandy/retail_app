@@ -15,31 +15,31 @@ Future<void> registerUseCases() async {
 }
 
 void _registerFoodCategoryUseCase() {
-  locator.registerFactory<FoodCategoryUseCase>(
+  locator.registerLazySingleton<FoodCategoryUseCase>(
     () => FoodCategoryUseCase(),
   );
 }
 
 void _registerFavouriteUseCase() {
-  locator.registerFactory<FavouriteUseCase>(
+  locator.registerLazySingleton<FavouriteUseCase>(
     () => FavouriteUseCase(),
   );
 }
 
 void _registerRecommendedCafeUseCase() {
-  locator.registerFactory<RecommendedCafeUseCase>(
+  locator.registerLazySingleton<RecommendedCafeUseCase>(
     () => RecommendedCafeUseCase(),
   );
 }
 
 void _registerExploreCafeUseCase() {
-  locator.registerFactory<ExploreCafeUseCase>(
+  locator.registerLazySingleton<ExploreCafeUseCase>(
     () => ExploreCafeUseCase(),
   );
 }
 
 void _registerCafeDetailsUseCase() {
-  locator.registerFactory<CafeDetailsUseCase>(
+  locator.registerLazySingleton<CafeDetailsUseCase>(
     () => CafeDetailsUseCase(),
   );
 }

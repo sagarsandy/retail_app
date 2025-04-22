@@ -22,8 +22,6 @@ class _FavouriteIconWidgetState extends State<FavouriteIconWidget> {
   @override
   void initState() {
     isSelected = favouriteCubit.favouriteCafeIds.contains(widget.cafe.id);
-    debugPrint(
-        "SS isSelected: $isSelected, ${widget.cafe.name}"); // Debugging line
     super.initState();
   }
 
