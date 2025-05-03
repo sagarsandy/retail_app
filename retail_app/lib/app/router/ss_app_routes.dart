@@ -20,6 +20,7 @@ enum SSAppRoutes implements SSRouteInfo {
   cafeFavourite('cafeFavourite', 'cafeFavourite'),
   cafeCart('cafeCart', 'cafeCart'),
   cafeOrders('cafeOrders', 'cafeOrders'),
+  cafeOrderDetails('cafeOrderDetails', 'cafeOrderDetails'),
   cafeOptionsMenu('cafeOptionsMenu', 'cafeOptionsMenu'),
   signUp('signup', 'signup');
 

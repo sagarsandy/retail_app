@@ -8,6 +8,7 @@ import '../../../app/theme/ss_colors.dart';
 
 class SSAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final bool showTitle;
+  final bool showLeadingIcon;
   final Function()? onLeadingIconTap;
   final String title;
   final Widget? trailingWidget;
@@ -18,6 +19,7 @@ class SSAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     this.onLeadingIconTap,
     required this.title,
     this.trailingWidget,
+    this.showLeadingIcon = true,
   });
 
   @override
@@ -34,20 +36,22 @@ class SSAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             )
           : null,
       centerTitle: true,
-      leading: SSIconButton(
-        padding: const EdgeInsets.only(left: 4.0),
-        icon: const Icon(
-          Icons.arrow_back,
-          color: SSColors.black,
-          size: 24.0,
-        ),
-        onPressed: () {
-          if (onLeadingIconTap != null) {
-            onLeadingIconTap!();
-          }
-          context.popToPage();
-        },
-      ),
+      leading: showLeadingIcon
+          ? SSIconButton(
+              padding: const EdgeInsets.only(left: 4.0),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: SSColors.black,
+                size: 24.0,
+              ),
+              onPressed: () {
+                if (onLeadingIconTap != null) {
+                  onLeadingIconTap!();
+                }
+                context.popToPage();
+              },
+            )
+          : const SizedBox.shrink(),
       actions: [
         trailingWidget ?? const SizedBox(),
       ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
+import 'package:retail_app/features/food/orders/presentation/widgets/orders_list_widget.dart';
 
-import '../../../../../app/theme/ss_colors.dart';
+import '../../../../../core/presentation/widgets/ss_app_bar_widget.dart';
 import '../../../common/utils/widget_utils/bottom_nav_widget.dart';
 
 class OrdersPage extends StatefulWidget {
@@ -14,23 +14,29 @@ class OrdersPage extends StatefulWidget {
 class _OrdersPageState extends State<OrdersPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+      appBar: SSAppBarWidget(
+        showTitle: true,
+        title: "Orders",
+        showLeadingIcon: false,
+      ),
       body: Stack(
         children: [
-          Center(
-            child: Text(
-              'Orders Page',
-              style: Theme.of(context).textTheme.extraLarge(SSColors.primary1),
+          Padding(
+            padding: EdgeInsets.only(
+              bottom: 10,
+              top: 6,
+            ), // leave space for nav bar
+            child: CustomScrollView(
+              slivers: [
+                OrdersListWidget(),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 65),
+                )
+              ],
             ),
           ),
-          const Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: BottomNavWidget(
-              activeIndex: 3,
-            ),
-          ),
+          BottomNavWidget(activeIndex: 3),
         ],
       ),
     );

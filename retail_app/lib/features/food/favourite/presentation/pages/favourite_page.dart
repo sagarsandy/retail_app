@@ -15,7 +15,11 @@ class _FavouritePageState extends State<FavouritePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: SSAppBarWidget(showTitle: true, title: "Favourites"),
+      appBar: SSAppBarWidget(
+        showTitle: true,
+        title: "Favourites",
+        showLeadingIcon: false,
+      ),
       body: Stack(
         children: [
           Padding(
