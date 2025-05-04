@@ -9,6 +9,7 @@ import 'package:retail_app/features/food/orders/router/orders_page_route.dart';
 import 'package:retail_app/features/login/router/login_page_route.dart';
 
 import '../../features/food/cafe_details/router/cafe_details_page_route.dart';
+import '../../features/otp/router/otp_page_route.dart';
 import 'ss_app_router.dart';
 
 class SSRouteInitializer {
@@ -23,6 +24,7 @@ class SSRouteInitializer {
   List<RouteBase> allRoutes() {
     return [
       LoginPageRoute(rootNavigatorKey).getRoute(),
+      OTPPageRoute(rootNavigatorKey).getRoute(),
       HomePageRoute(rootNavigatorKey).getRoute(),
       CafeDetailsPageRoute(rootNavigatorKey).getRoute(),
       FavouritePageRoute(rootNavigatorKey).getRoute(),

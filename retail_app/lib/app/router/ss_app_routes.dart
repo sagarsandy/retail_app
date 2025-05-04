@@ -15,6 +15,7 @@ enum SSAppRoutes implements SSRouteInfo {
   test4('test4', 'test4'),
   test5('test5', 'test5'),
   login('login', 'login'),
+  otp('otp', 'otp'),
   foodHome('foodHome', 'foodHome'),
   cafeDetails('cafeDetails', 'cafeDetails'),
   cafeFavourite('cafeFavourite', 'cafeFavourite'),
