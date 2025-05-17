@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/core/presentation/widgets/ss_icon_button.dart';
 import 'package:retail_app/di/service_locator.dart';
 import 'package:retail_app/features/food/common/model/cafe.dart';
 import 'package:retail_app/features/food/favourite/presentation/cubit/favourite_cubit.dart';
-
-import '../../../../../app/theme/ss_colors.dart';
-import '../../../../../core/presentation/widgets/ss_toast.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/widgets/ss_icon_button.dart';
+import 'package:retail_core/widgets/ss_toast.dart';
 
 class FavouriteIconWidget extends StatefulWidget {
   final Cafe cafe;

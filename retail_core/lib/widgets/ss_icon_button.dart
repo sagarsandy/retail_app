@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_colors.dart';
+
+import '../theme/ss_colors.dart';
 
 class SSIconButton extends StatelessWidget {
   final Widget icon;

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/features/food/order_details/presentation/widgets/order_cafe_item_widget.dart';
 import 'package:retail_app/features/food/order_details/presentation/widgets/order_charges_item_widget.dart';
 import 'package:retail_app/features/food/orders/domain/models/cafe_order.dart';
-
-import '../../../../../app/theme/ss_colors.dart';
-import '../../../../../app/theme/ss_core_font.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 enum OrderTextStyleType {
   regular,

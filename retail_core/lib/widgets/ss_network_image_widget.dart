@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../app/theme/ss_colors.dart';
+import '../theme/ss_colors.dart';
 
 class SSNetworkImageWidget extends StatelessWidget {
   final String imageUrl;
@@ -12,9 +12,9 @@ class SSNetworkImageWidget extends StatelessWidget {
     return CachedNetworkImage(
       fit: BoxFit.fill,
       imageUrl: imageUrl,
-      errorWidget: (context, url, error) => Container(
-        color: SSColors.secondary2.withOpacity(0.9),
-      ),
+      errorWidget:
+          (context, url, error) =>
+              Container(color: SSColors.secondary2.withOpacity(0.9)),
     );
   }
 }

@@ -1,12 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_app_routes.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/core/ext/string_ext.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
+import 'package:retail_core/utils/ss_image_provider.dart';
 
-import '../../../../../../app/theme/ss_colors.dart';
-import '../../../../../../app/theme/ss_core_font.dart';
 import '../../../../common/model/cafe.dart';
 
 class RecommendedListItemWidget extends StatelessWidget {
@@ -41,9 +40,7 @@ class RecommendedListItemWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(
-                    image: CachedNetworkImageProvider(
-                      cafe.imageUrl ?? "",
-                    ),
+                    image: SSImageProvider.getImage(cafe.imageUrl),
                     fit: BoxFit.cover,
                   ),
                 ),

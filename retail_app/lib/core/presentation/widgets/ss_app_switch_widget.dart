@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/widgets/ss_icon_button.dart';
 
 import '../../../app/router/ss_app_routes.dart';
-import '../../../app/theme/ss_colors.dart';
-import 'ss_icon_button.dart';
 
 class SSAppSwitchWidget extends StatelessWidget {
   const SSAppSwitchWidget({super.key});

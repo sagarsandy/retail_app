@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_colors.dart';
 
 class OffersWidget extends StatefulWidget {
   final List<String> offers;

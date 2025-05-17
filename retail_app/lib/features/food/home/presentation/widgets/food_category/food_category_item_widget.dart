@@ -1,9 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_colors.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/core/ext/string_ext.dart';
 import 'package:retail_app/features/food/common/model/food_category.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
+import 'package:retail_core/utils/ss_image_provider.dart';
 
 class FoodCategoryItemWidget extends StatelessWidget {
   final FoodCategory foodCategory;
@@ -22,9 +22,7 @@ class FoodCategoryItemWidget extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(50),
               image: DecorationImage(
-                image: CachedNetworkImageProvider(
-                  foodCategory.imageUrl,
-                ),
+                image: SSImageProvider.getImage(foodCategory.imageUrl),
                 fit: BoxFit.cover,
               ),
               boxShadow: [

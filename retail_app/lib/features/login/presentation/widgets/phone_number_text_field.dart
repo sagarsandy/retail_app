@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../app/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_colors.dart';
 
 class PhoneNumberTextField extends StatelessWidget {
   final TextEditingController controller;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/core/presentation/widgets/ss_app_bar_widget.dart';
-import 'package:retail_app/core/presentation/widgets/ss_link_text_widget.dart';
 import 'package:retail_app/features/food/order_details/presentation/widgets/order_info_widget.dart';
 import 'package:retail_app/features/food/order_details/presentation/widgets/order_summary_widget.dart';
 import 'package:retail_app/features/food/orders/domain/models/cafe_order.dart';
+import 'package:retail_core/widgets/ss_link_text_widget.dart';
 
 class OrderDetailsPage extends StatefulWidget {
   final CafeOrder? order;

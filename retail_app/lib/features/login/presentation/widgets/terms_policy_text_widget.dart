@@ -1,8 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
-
-import '../../../../app/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class TermsPolicyTextWidget extends StatelessWidget {
   const TermsPolicyTextWidget({super.key});

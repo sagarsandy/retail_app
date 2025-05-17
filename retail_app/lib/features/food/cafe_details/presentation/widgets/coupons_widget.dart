@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_colors.dart';
-import 'package:retail_app/app/theme/ss_core_font.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/features/food/cafe_details/domain/models/cafe_details.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class CouponsWidget extends StatefulWidget {
   final List<CafeCoupon> cafeCoupons;

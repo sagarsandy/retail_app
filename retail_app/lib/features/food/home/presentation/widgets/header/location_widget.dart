@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/core/ext/string_ext.dart';
-
-import '../../../../../../app/theme/ss_colors.dart';
-import '../../../../../../app/theme/ss_core_font.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class LocationWidget extends StatelessWidget {
   const LocationWidget({super.key});

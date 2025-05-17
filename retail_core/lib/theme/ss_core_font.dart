@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 String? fontFamily({required FontWeight fontWeight}) {
-  return GoogleFonts.openSans(
-    fontWeight: fontWeight,
-  ).fontFamily;
-}
-
-enum FontWeightType {
-  normal,
-  bold,
-  extraBold,
+  return GoogleFonts.openSans(fontWeight: fontWeight).fontFamily;
 }
 
 FontWeight normalFont() {

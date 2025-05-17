@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_app_routes.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/core/ext/string_ext.dart';
 import 'package:retail_app/features/food/common/model/cafe.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
+import 'package:retail_core/widgets/ss_network_image_widget.dart';
 
-import '../../../../../../app/theme/ss_colors.dart';
-import '../../../../../../app/theme/ss_core_font.dart';
-import '../../../../../../core/presentation/widgets/ss_network_image_widget.dart';
 import '../../../../common/utils/widget_utils/favourite_icon_widget.dart';
 
 class ExploreCafeListItemWidget extends StatelessWidget {

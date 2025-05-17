@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_core_font.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/features/food/common/enums/food_type.dart';
-
-import '../../../../../app/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class FiltersWidget extends StatefulWidget {
   final Function(String) onFilterSelected;

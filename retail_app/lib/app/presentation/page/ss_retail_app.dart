@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_app_router.dart';
 import 'package:retail_app/app/service/ss_post_app_launch.dart';
-
-import '../../theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_colors.dart';
 
 class SSRetailApp extends StatefulWidget {
   const SSRetailApp({super.key});

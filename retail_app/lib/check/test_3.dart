@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:retail_app/app/theme/ss_colors.dart';
+import 'package:retail_core/theme/ss_colors.dart';
 
 import '../app/router/ss_app_routes.dart';
 

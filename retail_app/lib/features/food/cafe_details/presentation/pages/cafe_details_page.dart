@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retail_app/di/service_locator.dart';
 import 'package:retail_app/features/food/cafe_details/cubit/cafe_details_cubit.dart';
 import 'package:retail_app/features/food/common/model/cafe.dart';
+import 'package:retail_core/theme/ss_colors.dart';
 
-import '../../../../../app/theme/ss_colors.dart';
 import '../../../../../core/presentation/widgets/ss_app_bar_widget.dart';
 import '../../../../../core/presentation/widgets/ss_page_loader_widget.dart';
 import '../../../common/utils/widget_utils/favourite_icon_widget.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_theme_ext.dart';
 import 'package:retail_app/features/food/order_details/presentation/widgets/order_info_item_widget.dart';
 import 'package:retail_app/features/food/orders/domain/models/cafe_order.dart';
+import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class OrderInfoWidget extends StatelessWidget {
   final CafeOrder order;

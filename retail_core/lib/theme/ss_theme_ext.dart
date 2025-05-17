@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/app/theme/ss_core_font.dart';
+import 'package:retail_core/theme/ss_core_font.dart';
+
+enum FontWeightType { normal, bold, extraBold }
 
 extension BaseTextTheme on TextTheme {
   TextStyle tiny(
@@ -13,9 +15,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 8,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );
@@ -32,9 +35,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 10,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );
@@ -51,9 +55,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 12,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );
@@ -70,9 +75,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 14,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );
@@ -89,9 +95,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 16,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );
@@ -108,9 +115,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 20,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );
@@ -128,9 +136,10 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: fontSize,
       decorationThickness: 3.0,
-      decoration: isStrikeThrough
-          ? TextDecoration.lineThrough
-          : isUnderLine
+      decoration:
+          isStrikeThrough
+              ? TextDecoration.lineThrough
+              : isUnderLine
               ? TextDecoration.underline
               : TextDecoration.none,
     );

@@ -1,0 +1,21 @@
+import 'package:go_router/go_router.dart';
+import 'package:retail_admin/app/router/ss_app_router.dart';
+import 'package:retail_admin/features/food/add_cafe/router/add_cafe_page_router.dart';
+import 'package:retail_admin/features/food/login/login_page_router.dart';
+
+class SSRouteInitializer {
+  static final SSRouteInitializer _singleton = SSRouteInitializer._internal();
+
+  factory SSRouteInitializer() {
+    return _singleton;
+  }
+
+  SSRouteInitializer._internal();
+
+  List<RouteBase> allRoutes() {
+    return [
+      LoginPageRoute(rootNavigatorKey).getRoute(),
+      AddCafePageRoute(rootNavigatorKey).getRoute(),
+    ];
+  }
+}

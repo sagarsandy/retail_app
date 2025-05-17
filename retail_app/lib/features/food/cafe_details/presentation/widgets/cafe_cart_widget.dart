@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:retail_app/core/presentation/widgets/ss_button_widget.dart';
-import 'package:retail_app/core/presentation/widgets/ss_toast.dart';
 import 'package:retail_app/di/service_locator.dart';
 import 'package:retail_app/features/food/cart/cubit/cafe_cart_cubit.dart';
 import 'package:retail_app/features/food/cart/cubit/cafe_cart_state.dart';
+import 'package:retail_core/widgets/ss_button_widget.dart';
+import 'package:retail_core/widgets/ss_toast.dart';
 
 class CafeCartWidget extends StatefulWidget {
   const CafeCartWidget({super.key});
