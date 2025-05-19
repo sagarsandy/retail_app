@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:retail_admin/features/food/add_cafe/presentation/pages/add_cafe_page.dart';
 
 import '../../../../app/router/ss_app_routes.dart';
 import '../../../../app/router/ss_page_route.dart';
 import '../../../../app/router/ss_route_utility.dart';
-import '../presentation/pages/add_cafe_page.dart';
+import '../../../../core/presentation/pages/ss_base_widget.dart';
 
 class AddCafePageRoute extends SSPageRoute {
   const AddCafePageRoute(super.parentNavigatorKey);
@@ -21,11 +22,10 @@ class AddCafePageRoute extends SSPageRoute {
           return buildPageWithAnimation(
             context: context,
             state: state,
-            child: const AddCafePage(),
-            // child: SSBaseWidget(
-            //   title: "Add Cafe Page",
-            //   page: const CafeHomePage(),
-            // ),
+            child: SSBaseWidget(
+              title: "Add Cafe Page",
+              page: const AddCafePage(),
+            ),
           );
         },
       );
