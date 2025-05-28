@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
+import 'package:retail_admin/app/router/ss_app_routes.dart';
+import 'package:go_router/go_router.dart';
 
 class AdminSideBarMenuWidget extends StatelessWidget {
   final int selectedIndex;
@@ -33,14 +35,14 @@ class AdminSideBarMenuWidget extends StatelessWidget {
 
     if (index == _titles.length - 1) {
       // Handle logout
-      Navigator.of(context).pushReplacementNamed('/login');
+      context.goNamed(SSAppRoutes.login.name);
       return;
     }
 
     // Handle navigation based on menu selection
     final String route = _getRouteForIndex(index);
     if (route.isNotEmpty) {
-      Navigator.of(context).pushNamed(route);
+      context.go(route);
     }
 
     // Close drawer after selection
@@ -50,7 +52,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
   String _getRouteForIndex(int index) {
     switch (index) {
       case 0:
-        return '/dashboard';
+        return SSAppRoutes.home.navigationPath;
       case 1:
         return '/orders';
       case 2:
@@ -58,7 +60,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
       case 3:
         return '/details';
       case 4:
-        return '/categories';
+        return SSAppRoutes.categories.navigationPath;
       case 5:
         return '/food-menu';
       case 6:

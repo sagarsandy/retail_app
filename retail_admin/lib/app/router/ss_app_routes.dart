@@ -11,7 +11,8 @@ enum SSAppRoutes implements SSRouteInfo {
   // Auth
   login('login', 'login'),
   addCafe('addCafe', 'addCafe'),
-  home('home', 'home');
+  home('home', 'home'),
+  categories('categories', 'categories');
 
   @override
   final String path;

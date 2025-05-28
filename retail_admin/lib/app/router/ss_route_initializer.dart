@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:retail_admin/app/router/ss_app_router.dart';
 import 'package:retail_admin/features/food/add_cafe/router/add_cafe_page_router.dart';
+import 'package:retail_admin/features/food/food_categories/router/food_categories_page_router.dart';
 import 'package:retail_admin/features/food/home/router/home_page_router.dart';
 import 'package:retail_admin/features/food/login/login_page_router.dart';
 
@@ -18,6 +19,7 @@ class SSRouteInitializer {
       LoginPageRoute(rootNavigatorKey).getRoute(),
       AddCafePageRoute(rootNavigatorKey).getRoute(),
       HomePageRoute(rootNavigatorKey).getRoute(),
+      FoodCategoriesPageRoute(rootNavigatorKey).getRoute(),
     ];
   }
 }
