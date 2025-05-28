@@ -10,7 +10,8 @@ abstract class SSRouteInfo {
 enum SSAppRoutes implements SSRouteInfo {
   // Auth
   login('login', 'login'),
-  addCafe('addCafe', 'addCafe');
+  addCafe('addCafe', 'addCafe'),
+  home('home', 'home');
 
   @override
   final String path;

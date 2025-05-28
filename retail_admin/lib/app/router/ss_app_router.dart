@@ -17,7 +17,7 @@ class SSAppRouter {
 
   GoRouter _makeRouter() {
     return GoRouter(
-      initialLocation: SSAppRoutes.login.navigationPath,
+      initialLocation: SSAppRoutes.home.navigationPath,
       navigatorKey: rootNavigatorKey,
       debugLogDiagnostics: true,
       redirect: _handleAuthRedirect,
@@ -39,8 +39,8 @@ class SSAppRouter {
   String? _handleAuthRedirect(BuildContext context, GoRouterState state) {
     const bool isLoggedIn = 2 / 2 == 1;
 
-    if (!isLoggedIn) {
-      return SSAppRoutes.addCafe.navigationPath;
+    if (!isLoggedIn && state.uri.path != SSAppRoutes.login.navigationPath) {
+      return SSAppRoutes.login.navigationPath;
     }
     return null;
   }
