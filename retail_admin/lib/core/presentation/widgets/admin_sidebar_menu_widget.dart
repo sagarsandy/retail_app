@@ -3,6 +3,7 @@ import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 import 'package:retail_admin/app/router/ss_app_routes.dart';
 import 'package:go_router/go_router.dart';
+import 'package:retail_admin/core/constants/ss_dimensions.dart';
 
 class AdminSideBarMenuWidget extends StatelessWidget {
   final int selectedIndex;
@@ -91,15 +92,15 @@ class AdminSideBarMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 225,
+      width: SSDimensions.drawerWidth,
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         color: SSColors.white,
         boxShadow: [
           BoxShadow(
             color: SSColors.grey1.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
+            spreadRadius: SSDimensions.spacingXXS,
+            blurRadius: SSDimensions.spacingXS,
             offset: const Offset(0, 3),
           ),
         ],
@@ -108,7 +109,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
         child: Column(
           children: [
             _buildHeader(context),
-            const Divider(height: 1),
+            const Divider(height: SSDimensions.spacingXXS),
             Expanded(
               child: _buildMenuItems(context),
             ),
@@ -120,7 +121,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
 
   Widget _buildHeader(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(SSDimensions.spacingM),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -149,7 +150,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
           (index) {
             if (index.isOdd) {
               return const Divider(
-                height: 1,
+                height: SSDimensions.spacingXXS,
                 color: SSColors.grey1,
               );
             }
@@ -163,7 +164,8 @@ class AdminSideBarMenuWidget extends StatelessWidget {
                   ? SSColors.surface.withOpacity(0.1)
                   : SSColors.transparent,
               child: ListTile(
-                contentPadding: const EdgeInsets.only(left: 24),
+                contentPadding:
+                    const EdgeInsets.only(left: SSDimensions.spacingL),
                 visualDensity: const VisualDensity(
                   horizontal: 0,
                   vertical: -1,

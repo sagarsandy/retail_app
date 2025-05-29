@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
+import 'package:retail_admin/core/constants/ss_dimensions.dart';
 
 class SSExpansionTileWidget extends StatefulWidget {
   final String title;
@@ -22,18 +23,18 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
     return AnimatedPhysicalModel(
       duration: const Duration(milliseconds: 900),
       curve: Curves.easeInOut,
-      elevation: _isExpanded ? 8.0 : 2.0,
+      elevation: _isExpanded ? SSDimensions.spacingM : SSDimensions.spacingXXS,
       shape: BoxShape.rectangle,
       shadowColor: Colors.black,
       color: _isExpanded ? SSColors.surface : SSColors.white,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(SSDimensions.borderRadiusM),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
             color: _isExpanded ? SSColors.action : Colors.transparent,
             width: 0.25,
           ),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(SSDimensions.borderRadiusM),
         ),
         child: Column(
           children: [
@@ -48,8 +49,9 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
                     _isExpanded ? SSColors.surface.withOpacity(0.1) : null,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(
-                    top: const Radius.circular(12),
-                    bottom: Radius.circular(_isExpanded ? 0 : 12),
+                    top: const Radius.circular(SSDimensions.borderRadiusM),
+                    bottom: Radius.circular(
+                        _isExpanded ? 0 : SSDimensions.borderRadiusM),
                   ),
                 ),
                 title: Text(
@@ -74,8 +76,8 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
               firstChild: const SizedBox.shrink(),
               secondChild: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 2.0,
-                  vertical: 1.0,
+                  horizontal: SSDimensions.spacingXXS,
+                  vertical: SSDimensions.spacingXXS / 2,
                 ),
                 child: Column(
                   children: widget.children,

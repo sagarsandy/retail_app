@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_admin/core/constants/ss_dimensions.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
@@ -25,11 +26,12 @@ class FiltersWidgetState extends State<FiltersWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: SSDimensions.spacingXL + SSDimensions.spacingS,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: filters.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 16),
+        separatorBuilder: (_, __) =>
+            const SizedBox(width: SSDimensions.spacingM),
         itemBuilder: (context, index) {
           final filter = filters[index];
           final isSelected = selectedFilter == filter.title;
@@ -43,11 +45,12 @@ class FiltersWidgetState extends State<FiltersWidget> {
               widget.onFilterSelected(selectedFilter!);
             },
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30), // more rounded
+              borderRadius:
+                  BorderRadius.circular(SSDimensions.borderRadiusL * 2),
               side: BorderSide(
                 width: isSelected ? 2 : 1,
                 color: isSelected ? SSColors.action : SSColors.grey1,
-              ), // purple border
+              ),
             ),
             selectedColor: SSColors.transparent,
             checkmarkColor: isSelected ? SSColors.action : SSColors.black,
