@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_admin/core/constants/ss_dimensions.dart';
 import 'package:retail_admin/features/food/food_items/domain/models/food_item.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
@@ -13,21 +14,24 @@ class FoodItemInfoWidget extends StatelessWidget {
       child: SizedBox(
         height: 140,
         child: Padding(
-          padding: const EdgeInsets.only(left: 10.0, top: 4.0),
+          padding: EdgeInsets.only(
+            left: SSDimensions.spacingS + 2,
+            top: SSDimensions.spacingXS,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(
                 Icons.square,
-                size: 24,
+                size: SSDimensions.iconSizeM,
                 color: foodItem.isVeg
                     ? Colors.green
                     : foodItem.isNonVeg
                         ? Colors.red
                         : Colors.yellow,
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: SSDimensions.spacingS),
               Text(
                 foodItem.name,
                 maxLines: 2,
@@ -35,7 +39,7 @@ class FoodItemInfoWidget extends StatelessWidget {
                       SSColors.black3,
                     ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: SSDimensions.spacingS),
               Row(
                 children: [
                   Visibility(

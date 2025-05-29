@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_admin/core/constants/ss_dimensions.dart';
 import 'package:retail_admin/features/food/food_items/domain/models/food_item_category.dart';
 import 'package:retail_admin/features/food/food_items/presentation/widgets/food_item_design_widget.dart';
 import 'package:retail_admin/features/food/food_items/presentation/widgets/food_item_info_widget.dart';
@@ -15,19 +16,19 @@ class FoodItemsListWidget extends StatelessWidget {
         itemCount: foodItemCategories.length,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.only(bottom: SSDimensions.spacingM),
         itemBuilder: (context, catIndex) {
           if (foodItemCategories[catIndex].foodItems == null ||
               foodItemCategories[catIndex].foodItems!.isEmpty) {
             return const SizedBox();
           }
           return Padding(
-            padding: const EdgeInsets.only(bottom: 12.0),
+            padding: const EdgeInsets.only(bottom: SSDimensions.borderRadiusM),
             child: SSExpansionTileWidget(
               title:
                   "${foodItemCategories[catIndex].name} (${foodItemCategories[catIndex].foodItems?.length})",
               children: [
-                const SizedBox(height: 1),
+                const SizedBox(height: SSDimensions.spacingXXS),
                 ListView.builder(
                   itemCount:
                       foodItemCategories[catIndex].foodItems?.length ?? 0,
@@ -38,18 +39,21 @@ class FoodItemsListWidget extends StatelessWidget {
                         foodItemCategories[catIndex].foodItems![index];
                     return Container(
                       height: 140,
-                      margin: const EdgeInsets.only(bottom: 8.0, right: 4.0),
+                      margin: const EdgeInsets.only(
+                        bottom: SSDimensions.spacingS,
+                        right: SSDimensions.spacingXS,
+                      ),
                       child: Row(
                         children: [
                           FoodItemInfoWidget(foodItem: cafeItem),
-                          const SizedBox(width: 8),
+                          const SizedBox(width: SSDimensions.spacingS),
                           FoodItemDesignWidget(foodItem: cafeItem),
                         ],
                       ),
                     );
                   },
                 ),
-                const SizedBox(height: 1),
+                const SizedBox(height: SSDimensions.spacingXXS),
               ],
             ),
           );
