@@ -6,7 +6,17 @@ import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class FoodItemInfoWidget extends StatelessWidget {
   final FoodItem foodItem;
-  const FoodItemInfoWidget({super.key, required this.foodItem});
+  final VoidCallback? onEdit;
+  final VoidCallback? onDelete;
+  final ValueChanged<bool>? onAvailabilityChanged;
+
+  const FoodItemInfoWidget({
+    super.key,
+    required this.foodItem,
+    this.onEdit,
+    this.onDelete,
+    this.onAvailabilityChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +50,7 @@ class FoodItemInfoWidget extends StatelessWidget {
                     ),
               ),
               const SizedBox(height: SSDimensions.spacingS),
+              // Price row
               Row(
                 children: [
                   Visibility(
@@ -52,7 +63,7 @@ class FoodItemInfoWidget extends StatelessWidget {
                           ),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: SSDimensions.spacingM),
                   Text(
                     "₹${foodItem.price}",
                     style: Theme.of(context).textTheme.extraLarge(
@@ -62,6 +73,47 @@ class FoodItemInfoWidget extends StatelessWidget {
                   ),
                 ],
               ),
+              const Spacer(),
+              // Action buttons row
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    onPressed: onEdit,
+                    icon: const Icon(
+                      Icons.edit,
+                      color: SSColors.grey1,
+                      size: SSDimensions.iconSizeM,
+                    ),
+                    visualDensity: VisualDensity.compact,
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(),
+                  ),
+                  const SizedBox(width: SSDimensions.spacingS),
+                  IconButton(
+                    onPressed: onDelete,
+                    icon: const Icon(
+                      Icons.delete_outline,
+                      color: SSColors.grey1,
+                      size: SSDimensions.iconSizeM,
+                    ),
+                    visualDensity: VisualDensity.compact,
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(),
+                  ),
+                  const SizedBox(width: SSDimensions.spacingS),
+                  Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+                      value: foodItem.isAvailable ?? false,
+                      onChanged: onAvailabilityChanged,
+                      activeColor: SSColors.grey1,
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: SSDimensions.spacingXS),
             ],
           ),
         ),

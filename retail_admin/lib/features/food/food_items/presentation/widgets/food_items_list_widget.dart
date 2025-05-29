@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retail_admin/core/constants/ss_dimensions.dart';
+import 'package:retail_admin/core/presentation/widgets/ss_dashed_divider.dart';
 import 'package:retail_admin/features/food/food_items/domain/models/food_item_category.dart';
 import 'package:retail_admin/features/food/food_items/presentation/widgets/food_item_design_widget.dart';
 import 'package:retail_admin/features/food/food_items/presentation/widgets/food_item_info_widget.dart';
@@ -8,7 +9,17 @@ import '../../../common/widgets/ss_expansion_tile_widget.dart';
 
 class FoodItemsListWidget extends StatelessWidget {
   final List<FoodItemCategory> foodItemCategories;
-  const FoodItemsListWidget({super.key, required this.foodItemCategories});
+  final Function(String)? onEditItem;
+  final Function(String)? onDeleteItem;
+  final Function(String, bool)? onToggleAvailability;
+
+  const FoodItemsListWidget({
+    super.key,
+    required this.foodItemCategories,
+    this.onEditItem,
+    this.onDeleteItem,
+    this.onToggleAvailability,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,19 +48,48 @@ class FoodItemsListWidget extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final cafeItem =
                         foodItemCategories[catIndex].foodItems![index];
-                    return Container(
-                      height: 140,
-                      margin: const EdgeInsets.only(
-                        bottom: SSDimensions.spacingS,
-                        right: SSDimensions.spacingXS,
-                      ),
-                      child: Row(
-                        children: [
-                          FoodItemInfoWidget(foodItem: cafeItem),
-                          const SizedBox(width: SSDimensions.spacingS),
-                          FoodItemDesignWidget(foodItem: cafeItem),
-                        ],
-                      ),
+                    return Column(
+                      children: [
+                        Container(
+                          height: 140,
+                          margin: const EdgeInsets.only(
+                            right: SSDimensions.spacingXS,
+                          ),
+                          child: Row(
+                            children: [
+                              FoodItemInfoWidget(
+                                foodItem: cafeItem,
+                                onEdit: onEditItem != null
+                                    ? () => onEditItem!(cafeItem.id)
+                                    : null,
+                                onDelete: onDeleteItem != null
+                                    ? () => onDeleteItem!(cafeItem.id)
+                                    : null,
+                                onAvailabilityChanged:
+                                    onToggleAvailability != null
+                                        ? (value) => onToggleAvailability!(
+                                            cafeItem.id, value)
+                                        : null,
+                              ),
+                              const SizedBox(width: SSDimensions.spacingS),
+                              FoodItemDesignWidget(foodItem: cafeItem),
+                            ],
+                          ),
+                        ),
+                        if (index <
+                            foodItemCategories[catIndex].foodItems!.length - 1)
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: SSDimensions.spacingS,
+                            ),
+                            child: SSDashedDivider(
+                              dashWidth: 8,
+                              gap: 4,
+                              height: 0.7,
+                              strokeWidth: 1,
+                            ),
+                          ),
+                      ],
                     );
                   },
                 ),
