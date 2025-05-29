@@ -1,0 +1,4 @@
+enum FavouriteUpdateType {
+  add,
+  remove,
+}

@@ -8,6 +8,7 @@ import 'package:retail_core/theme/ss_theme_ext.dart';
 import '../../domain/models/food_category.dart';
 import '../cubit/food_categories_cubit.dart';
 import '../cubit/food_categories_state.dart';
+import '../widgets/food_categories_app_bar_widget.dart';
 import '../widgets/food_categories_empty_state_widget.dart';
 import '../widgets/food_categories_error_state_widget.dart';
 import '../widgets/food_category_delete_dialog_widget.dart';
@@ -42,29 +43,10 @@ class _FoodCategoriesPageState extends State<FoodCategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: SSColors.white,
-        title: Text(
-          'Food Categories',
-          style: Theme.of(context).textTheme.large(
-                SSColors.black,
-                fontWeight: FontWeightType.extraBold,
-              ),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add, color: SSColors.black),
-            onPressed: () => _showAddCategoryDialog(),
-          ),
-        ],
+      appBar: FoodCategoriesAppBarWidget(
+        onAddPressed: _showAddCategoryDialog,
       ),
-      drawer: AdminSideBarMenuWidget(
-        selectedIndex: 4,
-        onCloseSidebar: () {
-          Navigator.pop(context);
-        },
-      ),
+      drawer: const AdminSideBarMenuWidget(selectedIndex: 4),
       body: BlocBuilder<FoodCategoriesCubit, FoodCategoriesState>(
         bloc: foodCategoriesCubit,
         builder: (context, state) {

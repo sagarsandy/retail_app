@@ -27,12 +27,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
               ),
         ),
       ),
-      drawer: AdminSideBarMenuWidget(
-        selectedIndex: _selectedIndex,
-        onCloseSidebar: () {
-          Navigator.pop(context);
-        },
-      ),
+      drawer: AdminSideBarMenuWidget(selectedIndex: _selectedIndex),
       body: Center(
         child: Text(
           'Welcome to Admin Panel',

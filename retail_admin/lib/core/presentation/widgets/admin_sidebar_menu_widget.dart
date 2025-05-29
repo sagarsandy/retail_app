@@ -6,13 +6,13 @@ import 'package:go_router/go_router.dart';
 
 class AdminSideBarMenuWidget extends StatelessWidget {
   final int selectedIndex;
-  final VoidCallback onCloseSidebar;
+  final VoidCallback? onCloseSidebar;
   final ValueChanged<int>? onIndexChanged;
 
   const AdminSideBarMenuWidget({
     super.key,
     required this.selectedIndex,
-    required this.onCloseSidebar,
+    this.onCloseSidebar,
     this.onIndexChanged,
   });
 
@@ -49,6 +49,13 @@ class AdminSideBarMenuWidget extends StatelessWidget {
     Navigator.pop(context);
   }
 
+  void _handleClose(BuildContext context) {
+    // Close the drawer
+    Navigator.pop(context);
+    // Notify parent if callback is provided
+    onCloseSidebar?.call();
+  }
+
   String _getRouteForIndex(int index) {
     switch (index) {
       case 0:
@@ -62,7 +69,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
       case 4:
         return SSAppRoutes.categories.navigationPath;
       case 5:
-        return '/food-menu';
+        return SSAppRoutes.foodItems.navigationPath;
       case 6:
         return '/reviews';
       case 7:
@@ -126,7 +133,7 @@ class AdminSideBarMenuWidget extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.close, color: SSColors.black),
-            onPressed: onCloseSidebar,
+            onPressed: () => _handleClose(context),
           ),
         ],
       ),
