@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retail_admin/core/presentation/widgets/ss_alert_widget.dart';
 import 'package:retail_admin/core/presentation/widgets/ss_toast.dart';
+import 'package:retail_admin/features/food/food_items/domain/models/food_item.dart';
 
 import '../cubit/food_items_cubit.dart';
 import '../cubit/food_items_state.dart';
@@ -18,9 +19,9 @@ class FoodItemsContentWidget extends StatelessWidget {
     required this.foodItemsCubit,
   });
 
-  void _handleEditItem(String itemId) {
+  void _handleEditItem(FoodItem foodItem) {
     // TODO: Implement edit functionality
-    debugPrint('Edit item: $itemId');
+    debugPrint('Edit item: $foodItem');
   }
 
   void _handleDeleteItem(BuildContext context, String itemId) {
@@ -88,7 +89,6 @@ class FoodItemsContentWidget extends StatelessWidget {
 
           return FoodItemsListWidget(
             foodItemCategories: state.foodCategories,
-            onEditItem: _handleEditItem,
             onDeleteItem: (itemId) => _handleDeleteItem(context, itemId),
             onToggleAvailability: (itemId, isAvailable) =>
                 _handleToggleAvailability(context, itemId, isAvailable),

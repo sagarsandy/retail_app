@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:retail_admin/core/presentation/widgets/admin_sidebar_menu_widget.dart';
 import 'package:retail_admin/di/service_locator.dart';
+import 'package:retail_admin/features/food/common/enums/food_type.dart';
 import 'package:retail_admin/features/food/food_items/presentation/widgets/filters_widget.dart';
-import 'package:retail_core/theme/ss_colors.dart';
-import 'package:retail_core/theme/ss_theme_ext.dart';
 
 import '../cubit/food_items_cubit.dart';
 import '../widgets/food_items_app_bar_widget.dart';
@@ -40,7 +39,10 @@ class _FoodItemsPageState extends State<FoodItemsPage> {
           child: Column(
             children: [
               const SizedBox(height: 16),
-              FiltersWidget(onFilterSelected: _handleFilterSelected),
+              FiltersWidget(
+                filters: FoodType.values,
+                onFilterSelected: _handleFilterSelected,
+              ),
               const SizedBox(height: 8),
               FoodItemsContentWidget(foodItemsCubit: foodItemsCubit),
               const SizedBox(height: 16),

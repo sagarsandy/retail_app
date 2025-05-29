@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:retail_admin/core/constants/ss_dimensions.dart';
+import 'package:retail_admin/features/food/common/enums/food_type.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
-import '../../../common/enums/food_type.dart';
-
 class FiltersWidget extends StatefulWidget {
+  final List<FoodType> filters;
   final Function(String) onFilterSelected;
-  const FiltersWidget({super.key, required this.onFilterSelected});
+  const FiltersWidget({
+    super.key,
+    required this.onFilterSelected,
+    required this.filters,
+  });
 
   @override
   FiltersWidgetState createState() => FiltersWidgetState();
 }
 
 class FiltersWidgetState extends State<FiltersWidget> {
-  final List<FoodType> filters = FoodType.values;
   String? selectedFilter;
 
   @override
   initState() {
     super.initState();
-    selectedFilter = filters.first.title;
+    selectedFilter = widget.filters.first.title;
   }
 
   @override
@@ -29,11 +32,11 @@ class FiltersWidgetState extends State<FiltersWidget> {
       height: SSDimensions.spacingXL + SSDimensions.spacingS,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: filters.length,
+        itemCount: widget.filters.length,
         separatorBuilder: (_, __) =>
             const SizedBox(width: SSDimensions.spacingM),
         itemBuilder: (context, index) {
-          final filter = filters[index];
+          final filter = widget.filters[index];
           final isSelected = selectedFilter == filter.title;
           return FilterChip(
             label: Text(filter.title),

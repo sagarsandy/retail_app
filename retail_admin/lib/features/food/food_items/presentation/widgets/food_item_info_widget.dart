@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:retail_admin/app/router/ss_app_routes.dart';
 import 'package:retail_admin/core/constants/ss_dimensions.dart';
 import 'package:retail_admin/features/food/food_items/domain/models/food_item.dart';
 import 'package:retail_core/theme/ss_colors.dart';
@@ -6,17 +8,22 @@ import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class FoodItemInfoWidget extends StatelessWidget {
   final FoodItem foodItem;
-  final VoidCallback? onEdit;
   final VoidCallback? onDelete;
   final ValueChanged<bool>? onAvailabilityChanged;
 
   const FoodItemInfoWidget({
     super.key,
     required this.foodItem,
-    this.onEdit,
     this.onDelete,
     this.onAvailabilityChanged,
   });
+
+  void _handleEdit(BuildContext context) {
+    context.pushNamed(
+      SSAppRoutes.manageFoodItem.name,
+      queryParameters: {'foodItem': foodItem},
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +86,7 @@ class FoodItemInfoWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    onPressed: onEdit,
+                    onPressed: () => _handleEdit(context),
                     icon: const Icon(
                       Icons.edit,
                       color: SSColors.grey1,

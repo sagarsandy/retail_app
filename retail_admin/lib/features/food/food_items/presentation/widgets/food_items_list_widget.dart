@@ -9,14 +9,12 @@ import '../../../common/widgets/ss_expansion_tile_widget.dart';
 
 class FoodItemsListWidget extends StatelessWidget {
   final List<FoodItemCategory> foodItemCategories;
-  final Function(String)? onEditItem;
   final Function(String)? onDeleteItem;
   final Function(String, bool)? onToggleAvailability;
 
   const FoodItemsListWidget({
     super.key,
     required this.foodItemCategories,
-    this.onEditItem,
     this.onDeleteItem,
     this.onToggleAvailability,
   });
@@ -59,9 +57,6 @@ class FoodItemsListWidget extends StatelessWidget {
                             children: [
                               FoodItemInfoWidget(
                                 foodItem: cafeItem,
-                                onEdit: onEditItem != null
-                                    ? () => onEditItem!(cafeItem.id)
-                                    : null,
                                 onDelete: onDeleteItem != null
                                     ? () => onDeleteItem!(cafeItem.id)
                                     : null,
