@@ -19,7 +19,7 @@ class AddCafePageRoute extends SSPageRoute {
           return null;
         },
         pageBuilder: (BuildContext context, GoRouterState state) {
-          return buildPageWithAnimation(
+          return buildPageWithOutAnimation(
             context: context,
             state: state,
             child: SSBaseWidget(

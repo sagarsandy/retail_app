@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:retail_admin/app/router/ss_app_routes.dart';
+import 'package:retail_admin/app/router/ss_route_utility.dart';
+import 'package:retail_admin/core/constants/ss_dimensions.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
-import 'package:retail_admin/app/router/ss_app_routes.dart';
-import 'package:go_router/go_router.dart';
-import 'package:retail_admin/core/constants/ss_dimensions.dart';
 
 class AdminSideBarMenuWidget extends StatelessWidget {
   final int selectedIndex;
@@ -41,10 +42,8 @@ class AdminSideBarMenuWidget extends StatelessWidget {
     }
 
     // Handle navigation based on menu selection
-    final String route = _getRouteForIndex(index);
-    if (route.isNotEmpty) {
-      context.go(route);
-    }
+    final route = _getRouteForIndex(index);
+    context.goToPage(route);
 
     // Close drawer after selection
     Navigator.pop(context);
@@ -57,28 +56,28 @@ class AdminSideBarMenuWidget extends StatelessWidget {
     onCloseSidebar?.call();
   }
 
-  String _getRouteForIndex(int index) {
+  SSRouteInfo _getRouteForIndex(int index) {
     switch (index) {
       case 0:
-        return SSAppRoutes.home.navigationPath;
+        return SSAppRoutes.home;
       case 1:
-        return '/orders';
+        return SSAppRoutes.home;
       case 2:
-        return '/coupons';
+        return SSAppRoutes.home;
       case 3:
-        return '/details';
+        return SSAppRoutes.home;
       case 4:
-        return SSAppRoutes.categories.navigationPath;
+        return SSAppRoutes.categories;
       case 5:
-        return SSAppRoutes.foodItems.navigationPath;
+        return SSAppRoutes.foodItems;
       case 6:
-        return '/reviews';
+        return SSAppRoutes.reviews;
       case 7:
-        return '/revenue';
+        return SSAppRoutes.home;
       case 8:
-        return '/settlements';
+        return SSAppRoutes.home;
       default:
-        return '';
+        return SSAppRoutes.home;
     }
   }
 

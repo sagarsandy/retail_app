@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../app/router/ss_app_routes.dart';
 import '../../../../app/router/ss_page_route.dart';
 import '../../../../app/router/ss_route_utility.dart';
@@ -18,7 +19,7 @@ class FoodItemsPageRouter extends SSPageRoute {
           return null;
         },
         pageBuilder: (BuildContext context, GoRouterState state) {
-          return buildPageWithAnimation(
+          return buildPageWithOutAnimation(
             context: context,
             state: state,
             child: SSBaseWidget(
