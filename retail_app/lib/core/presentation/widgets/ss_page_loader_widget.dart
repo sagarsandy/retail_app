@@ -40,7 +40,7 @@ class _SSPageLoaderWidgetState extends State<SSPageLoaderWidget>
               height: 60,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: SSColors.action.withOpacity(0.2),
+                color: SSColors.actionF.withOpacity(0.2),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26.withOpacity(0.03),

@@ -20,7 +20,7 @@ class _MenuPageState extends State<MenuPage> {
           Center(
             child: Text(
               'Menu Page',
-              style: Theme.of(context).textTheme.extraLarge(SSColors.primary1),
+              style: Theme.of(context).textTheme.extraLarge(SSColors.primary1F),
             ),
           ),
           const Positioned(

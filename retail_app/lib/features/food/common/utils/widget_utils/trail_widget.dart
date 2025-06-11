@@ -17,19 +17,19 @@ class TrailWidget extends StatelessWidget {
         children: [
           Text(
             title,
-            style: Theme.of(context).textTheme.extraLarge(SSColors.primary1),
+            style: Theme.of(context).textTheme.extraLarge(SSColors.primary1F),
           ),
           const SizedBox(height: 20),
           Text(
             'Sub Text Page 1',
             style: Theme.of(context)
                 .textTheme
-                .extraLarge(SSColors.primary1, fontWeight: FontWeightType.bold),
+                .extraLarge(SSColors.primary1F, fontWeight: FontWeightType.bold),
           ),
           const SizedBox(height: 20),
           Text(
             'Sub Text Page 2',
-            style: Theme.of(context).textTheme.extraLarge(SSColors.primary1,
+            style: Theme.of(context).textTheme.extraLarge(SSColors.primary1F,
                 fontWeight: FontWeightType.extraBold),
           ),
         ],

@@ -11,7 +11,7 @@ class SSSecondaryButtonWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTap,
-    this.primaryColor = SSColors.primary1,
+    this.primaryColor = SSColors.primary1F,
   });
 
   @override
@@ -22,9 +22,9 @@ class SSSecondaryButtonWidget extends StatelessWidget {
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: SSColors.white.withOpacity(0.2),
-        surfaceTintColor: SSColors.primary1, // Highlighted color
+        surfaceTintColor: SSColors.primary1F, // Highlighted color
         padding: EdgeInsets.zero,
-        side: const BorderSide(color: SSColors.action, width: 2),
+        side: const BorderSide(color: SSColors.actionF, width: 2),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         elevation: 9,
       ),
@@ -32,7 +32,7 @@ class SSSecondaryButtonWidget extends StatelessWidget {
         title,
         style: Theme.of(
           context,
-        ).textTheme.medium(SSColors.action, fontWeight: FontWeightType.bold),
+        ).textTheme.medium(SSColors.actionF, fontWeight: FontWeightType.bold),
       ),
     );
   }

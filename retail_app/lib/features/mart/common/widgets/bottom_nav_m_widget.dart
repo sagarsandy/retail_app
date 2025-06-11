@@ -5,21 +5,20 @@ import 'package:retail_core/theme/ss_colors.dart';
 
 import '../../../../../app/router/ss_app_routes.dart';
 
-class BottomNavWidget extends StatefulWidget {
+class BottomNavMWidget extends StatefulWidget {
   final int activeIndex;
-  const BottomNavWidget({
+  const BottomNavMWidget({
     super.key,
     required this.activeIndex,
   });
 
   @override
-  State<BottomNavWidget> createState() => _BottomNavWidgetState();
+  State<BottomNavMWidget> createState() => _BottomNavMWidgetState();
 }
 
-class _BottomNavWidgetState extends State<BottomNavWidget> {
+class _BottomNavMWidgetState extends State<BottomNavMWidget> {
   final List<IconData> _icons = [
     Icons.home,
-    Icons.favorite_border_outlined,
     Icons.add_shopping_cart_outlined,
     Icons.shopping_basket_outlined,
     Icons.menu_outlined,
@@ -27,16 +26,14 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
 
   final List<String> _titles = [
     'Home',
-    'Favourite',
     'Cart',
     'Orders',
     'Menu',
   ];
 
   final List<SSRouteInfo> _routes = [
-    SSAppRoutes.foodHome,
-    SSAppRoutes.cafeFavourite,
     SSAppRoutes.martHome,
+    SSAppRoutes.cafeCart,
     SSAppRoutes.cafeOrders,
     SSAppRoutes.cafeOptionsMenu,
   ];
@@ -59,7 +56,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
         icons: _icons,
         titles: _titles,
         selectedIndex: widget.activeIndex,
-        actionColor: SSColors.actionF,
+        actionColor: SSColors.actionM,
         onItemTap: (index) {
           _onItemTapped(index);
         },

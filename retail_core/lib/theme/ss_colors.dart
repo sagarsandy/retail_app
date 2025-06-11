@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SSColors {
-  static const Color surface = Color(0xFFF7F2FA);
-  static const Color primary1 = Color(0xFFC5E5AD);
-  static const Color primary2 = Color(0xFFC3E3AB);
-  static const Color primary3 = Color(0xFFE1EFD2);
-  static const Color action = Colors.orange;
+  // Food theme colors
+  static const Color surfaceF = Color(0xFFF7F2FA);
+  static const Color primary1F = Color(0xFFC5E5AD);
+  static const Color primary2F = Color(0xFFC3E3AB);
+  static const Color primary3F = Color(0xFFE1EFD2);
+  static const Color actionF = Colors.orange;
   static const Color secondary1 = Color(0xFFFADD72);
   static const Color secondary2 = Color(0xFFE4D498);
   static const Color secondary3 = Color(0xFFEEEEEE);
@@ -20,4 +21,10 @@ class SSColors {
   static const Color background = Color(0xFFF5F5F5);
   static const Color transparent = Color(0x00000000);
   static Color shadow = const Color(0xFF9E9E9E).withOpacity(0.85);
+
+  // Mart theme colors
+  static const Color surfaceM = Color(0xFFECF6E4);
+  static const Color primary1M = Color(0xFF29AC62);
+  static const Color primary2M = Color(0xFF6ADF9C);
+  static const Color actionM = Color(0xFF4FA002);
 }

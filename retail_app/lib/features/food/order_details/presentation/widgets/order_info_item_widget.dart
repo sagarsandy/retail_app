@@ -20,7 +20,7 @@ class OrderInfoItemWidget extends StatelessWidget {
         Icon(
           icon,
           size: 35,
-          color: SSColors.action,
+          color: SSColors.actionF,
         ),
         const SizedBox(width: 12),
         Expanded(

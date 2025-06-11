@@ -37,7 +37,7 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
   Widget build(BuildContext context) {
     if (widget.cafe == null) {
       return Scaffold(
-        backgroundColor: SSColors.surface,
+        backgroundColor: SSColors.surfaceF,
         appBar: SSAppBarWidget(
           showTitle: _showTitle,
           title: "Cafe not found",
@@ -48,7 +48,7 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: const CafeCartWidget(),
-      backgroundColor: SSColors.surface,
+      backgroundColor: SSColors.surfaceF,
       appBar: SSAppBarWidget(
         showTitle: _showTitle,
         title: widget.cafe!.name,

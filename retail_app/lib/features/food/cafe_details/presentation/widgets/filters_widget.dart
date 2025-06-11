@@ -45,14 +45,14 @@ class FiltersWidgetState extends State<FiltersWidget> {
               borderRadius: BorderRadius.circular(30), // more rounded
               side: BorderSide(
                 width: isSelected ? 2 : 1,
-                color: isSelected ? SSColors.action : SSColors.grey1,
+                color: isSelected ? SSColors.actionF : SSColors.grey1,
               ), // purple border
             ),
             selectedColor: SSColors.transparent,
-            checkmarkColor: isSelected ? SSColors.action : SSColors.black,
+            checkmarkColor: isSelected ? SSColors.actionF : SSColors.black,
             backgroundColor: SSColors.white,
             labelStyle: Theme.of(context).textTheme.regular(
-                  isSelected ? SSColors.action : SSColors.black,
+                  isSelected ? SSColors.actionF : SSColors.black,
                   fontWeight: isSelected
                       ? FontWeightType.extraBold
                       : FontWeightType.bold,

@@ -28,7 +28,7 @@ class _SSRetailAppState extends State<SSRetailApp> {
       title: 'Retail App',
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
-        scaffoldBackgroundColor: SSColors.surface,
+        scaffoldBackgroundColor: SSColors.surfaceF,
         appBarTheme: const AppBarTheme(
           color: Colors.white,
           iconTheme: IconThemeData(color: SSColors.black2),

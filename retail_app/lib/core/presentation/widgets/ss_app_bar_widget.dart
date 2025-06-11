@@ -23,7 +23,7 @@ class SSAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: SSColors.surface,
+      backgroundColor: SSColors.surfaceF,
       title: showTitle
           ? Text(
               title,

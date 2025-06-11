@@ -4,8 +4,11 @@ import 'package:retail_app/core/ext/string_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
+import '../../../enums/app_enum.dart';
+
 class LocationWidget extends StatelessWidget {
-  const LocationWidget({super.key});
+  final AppType appType;
+  const LocationWidget({super.key, required this.appType});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +17,15 @@ class LocationWidget extends StatelessWidget {
         context.popToPage();
       },
       child: SizedBox(
-        height: 65,
+        height: 55,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(
+            Icon(
               Icons.location_on_outlined,
-              color: SSColors.action,
+              color:
+                  appType == AppType.food ? SSColors.actionF : SSColors.actionM,
               size: 40,
             ),
             const SizedBox(width: 2),
@@ -37,9 +41,11 @@ class LocationWidget extends StatelessWidget {
                             fontWeight: FontWeightType.bold,
                           ),
                     ),
-                    const Icon(
+                    Icon(
                       Icons.keyboard_arrow_down,
-                      color: SSColors.action,
+                      color: appType == AppType.food
+                          ? SSColors.actionF
+                          : SSColors.actionM,
                       weight: 30,
                       size: 16,
                     ),

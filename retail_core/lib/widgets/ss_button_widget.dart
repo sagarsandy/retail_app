@@ -13,7 +13,7 @@ class SSButtonWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTap,
-    this.primaryColor = SSColors.primary1,
+    this.primaryColor = SSColors.primary1F,
     this.elevation = 9,
     this.isEnabled = true,
   });
@@ -23,8 +23,8 @@ class SSButtonWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: isEnabled ? onTap : null,
       style: ElevatedButton.styleFrom(
-        backgroundColor: isEnabled ? SSColors.action : SSColors.grey1,
-        surfaceTintColor: SSColors.primary1, // Highlighted color
+        backgroundColor: isEnabled ? SSColors.actionF : SSColors.grey1,
+        surfaceTintColor: SSColors.primary1F, // Highlighted color
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         elevation: isEnabled ? elevation : 0,

@@ -38,11 +38,11 @@ class PhoneNumberTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: SSColors.primary1),
+          borderSide: const BorderSide(color: SSColors.primary1F),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: SSColors.primary1),
+          borderSide: const BorderSide(color: SSColors.primary1F),
         ),
         filled: true,
         fillColor: Colors.white,

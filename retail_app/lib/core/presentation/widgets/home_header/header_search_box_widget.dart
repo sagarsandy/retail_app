@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/enums/app_enum.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class HeaderSearchBoxWidget extends StatelessWidget {
-  const HeaderSearchBoxWidget({super.key});
+  final AppType appType;
+  const HeaderSearchBoxWidget({
+    super.key,
+    required this.appType,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +30,14 @@ class HeaderSearchBoxWidget extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(
+            Icon(
               Icons.search,
-              color: SSColors.action,
+              color:
+                  appType == AppType.food ? SSColors.actionF : SSColors.actionM,
             ),
             const SizedBox(width: 10),
             Text(
-              "Search for food",
+              "Search for ${appType == AppType.food ? 'food' : 'products'}",
               style: Theme.of(context).textTheme.medium(SSColors.grey1),
             ),
           ],

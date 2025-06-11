@@ -18,7 +18,7 @@ class TermsPolicyTextWidget extends StatelessWidget {
           TextSpan(
             text: 'Terms of Service',
             style: Theme.of(context).textTheme.regular(
-                  SSColors.action,
+                  SSColors.actionF,
                   isUnderLine: true,
                 ),
             recognizer: TapGestureRecognizer()..onTap = () {},
@@ -27,7 +27,7 @@ class TermsPolicyTextWidget extends StatelessWidget {
           TextSpan(
             text: 'Privacy Policy',
             style: Theme.of(context).textTheme.regular(
-                  SSColors.action,
+                  SSColors.actionF,
                   isUnderLine: true,
                 ),
             recognizer: TapGestureRecognizer()..onTap = () {},

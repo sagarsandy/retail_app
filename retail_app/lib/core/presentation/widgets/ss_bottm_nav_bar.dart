@@ -6,12 +6,14 @@ class SSBottomNavBar extends StatelessWidget {
   final List<IconData> icons;
   final List<String> titles;
   final int? selectedIndex;
+  final Color actionColor;
   final Function(int) onItemTap;
   const SSBottomNavBar({
     super.key,
     required this.icons,
     required this.titles,
     required this.onItemTap,
+    required this.actionColor,
     this.selectedIndex = 0,
   });
 
@@ -46,7 +48,7 @@ class SSBottomNavBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   width: isSelected ? 2 : 0,
-                  color: isSelected ? SSColors.action : SSColors.transparent,
+                  color: isSelected ? actionColor : SSColors.transparent,
                 ),
               ),
               child: Column(
@@ -57,7 +59,7 @@ class SSBottomNavBar extends StatelessWidget {
                     curve: Curves.easeInOut,
                     child: Icon(
                       icons[index],
-                      color: isSelected ? SSColors.action : SSColors.action,
+                      color: actionColor,
                       size: isSelected ? 28 : 24,
                     ),
                   ),
@@ -66,7 +68,7 @@ class SSBottomNavBar extends StatelessWidget {
                     duration: const Duration(milliseconds: 1000),
                     curve: Curves.easeInOut,
                     style: Theme.of(context).textTheme.small(
-                          isSelected ? SSColors.action : SSColors.action,
+                          actionColor,
                           fontWeight: isSelected
                               ? FontWeightType.extraBold
                               : FontWeightType.normal,

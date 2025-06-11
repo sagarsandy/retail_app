@@ -21,7 +21,7 @@ class _OtpPageState extends State<OtpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const SSAppBarWidget(showTitle: false, title: ""),
-      backgroundColor: SSColors.surface,
+      backgroundColor: SSColors.surfaceF,
       body: Padding(
         padding: const EdgeInsets.all(26.0),
         child: Column(
@@ -56,7 +56,7 @@ class _OtpPageState extends State<OtpPage> {
                     ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: SSColors.primary1),
+                  border: Border.all(color: SSColors.primary1F),
                 ),
               ),
               focusedPinTheme: PinTheme(
@@ -69,7 +69,7 @@ class _OtpPageState extends State<OtpPage> {
                     ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: SSColors.primary1),
+                  border: Border.all(color: SSColors.primary1F),
                 ),
               ),
               submittedPinTheme: PinTheme(
@@ -82,7 +82,7 @@ class _OtpPageState extends State<OtpPage> {
                     ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: SSColors.primary1),
+                  border: Border.all(color: SSColors.primary1F),
                 ),
               ),
               errorPinTheme: PinTheme(
@@ -136,7 +136,7 @@ class _OtpPageState extends State<OtpPage> {
                   TextSpan(
                     text: 'Resend',
                     style: Theme.of(context).textTheme.regular(
-                          SSColors.action,
+                          SSColors.actionF,
                           isUnderLine: true,
                         ),
                     recognizer: TapGestureRecognizer()
