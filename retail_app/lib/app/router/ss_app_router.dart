@@ -17,7 +17,7 @@ class SSAppRouter {
 
   GoRouter _makeRouter() {
     return GoRouter(
-      initialLocation: SSAppRoutes.login.navigationPath,
+      initialLocation: SSAppRoutes.landing.navigationPath,
       navigatorKey: rootNavigatorKey,
       debugLogDiagnostics: true,
       redirect: _handleAuthRedirect,

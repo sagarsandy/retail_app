@@ -9,13 +9,9 @@ abstract class SSRouteInfo {
 
 enum SSAppRoutes implements SSRouteInfo {
   // Auth
-  test1('test1', 'test1'),
-  test2('test2', 'test2'),
-  test3('test3', 'test3'),
-  test4('test4', 'test4'),
-  test5('test5', 'test5'),
   login('login', 'login'),
   otp('otp', 'otp'),
+  landing('landing', 'landing'),
   foodHome('foodHome', 'foodHome'),
   cafeDetails('cafeDetails', 'cafeDetails'),
   cafeFavourite('cafeFavourite', 'cafeFavourite'),

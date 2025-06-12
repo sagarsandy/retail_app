@@ -5,6 +5,7 @@ import 'package:retail_app/features/food/home/router/home_page_route.dart';
 import 'package:retail_app/features/food/menu/router/menu_page_route.dart';
 import 'package:retail_app/features/food/order_details/router/orders_details_page_route.dart';
 import 'package:retail_app/features/food/orders/router/orders_page_route.dart';
+import 'package:retail_app/features/landing/router/landing_page_route.dart';
 import 'package:retail_app/features/login/router/login_page_route.dart';
 import 'package:retail_app/features/mart/home/router/home_page_m_route.dart';
 
@@ -25,6 +26,7 @@ class SSRouteInitializer {
     return [
       LoginPageRoute(rootNavigatorKey).getRoute(),
       OTPPageRoute(rootNavigatorKey).getRoute(),
+      LandingPageRoute(rootNavigatorKey).getRoute(),
       HomePageRoute(rootNavigatorKey).getRoute(),
       CafeDetailsPageRoute(rootNavigatorKey).getRoute(),
       FavouritePageRoute(rootNavigatorKey).getRoute(),
