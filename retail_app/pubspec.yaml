@@ -35,8 +35,8 @@ dev_dependencies:
   logging: ^1.2.0
 
 flutter_native_splash:
-  color: "#0f1218"
-  image: assets/core/splash_icon.png
+  color: "##06153E"
+  image: assets/core/app_icon.png
 
 flutter:
   uses-material-design: true

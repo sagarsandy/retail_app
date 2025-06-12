@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/core/presentation/widgets/ss_offers_widget.dart';
 import 'package:retail_app/features/mart/common/widgets/bottom_nav_m_widget.dart';
+import 'package:retail_app/features/mart/home/presentation/widgets/primary_categories_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
 import '../../../../../core/enums/app_enum.dart';
@@ -21,6 +22,7 @@ class _HomePageMState extends State<HomePageM> {
     "Offer 4",
     "Offer 5"
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +37,10 @@ class _HomePageMState extends State<HomePageM> {
                   appType: AppType.mart,
                 ),
                 OffersWidget(offers: offers),
+                const PrimaryCategoriesWidget(),
+                const SliverToBoxAdapter(
+                  child: SizedBox(height: 120), // Spacer
+                ),
               ],
             ),
           ),

@@ -25,7 +25,7 @@ class _SSExpansionTileWidgetState extends State<SSExpansionTileWidget> {
       elevation: _isExpanded ? 8.0 : 2.0,
       shape: BoxShape.rectangle,
       shadowColor: Colors.black,
-      color: SSColors.surfaceF,
+      color: SSColors.white,
       borderRadius: BorderRadius.circular(12),
       child: Column(
         children: [
