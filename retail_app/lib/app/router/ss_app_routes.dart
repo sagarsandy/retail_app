@@ -20,7 +20,8 @@ enum SSAppRoutes implements SSRouteInfo {
   cafeOrderDetails('cafeOrderDetails', 'cafeOrderDetails'),
   cafeOptionsMenu('cafeOptionsMenu', 'cafeOptionsMenu'),
   signUp('signup', 'signup'),
-  martHome('martHome', 'martHome');
+  martHome('martHome', 'martHome'),
+  martProductListing('martProductListing', 'martProductListing');
 
   @override
   final String path;

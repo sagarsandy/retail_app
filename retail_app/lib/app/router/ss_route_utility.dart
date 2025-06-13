@@ -98,6 +98,8 @@ extension BuildContextRouter on BuildContext {
   }
 
   void popToPage() {
-    pop();
+    if (canPop()) {
+      pop();
+    }
   }
 }
