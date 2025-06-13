@@ -3,12 +3,18 @@ import 'package:retail_app/features/food/favourite/presentation/cubit/favourite_
 import 'package:retail_app/features/food/home/cubit/explore/explore_cafe_cubit.dart';
 import 'package:retail_app/features/food/home/cubit/food_category/food_category_cubit.dart';
 import 'package:retail_app/features/food/home/cubit/recommended/recommended_cafe_cubit.dart';
+import 'package:retail_app/features/mart/home/cubit/mart_categories_cubit.dart';
 
 import '../features/food/cafe_details/cubit/cafe_details_cubit.dart';
 import '../features/food/cart/cubit/cafe_cart_cubit.dart';
 import '../features/food/orders/cubit/orders_cubit.dart';
 
 Future<void> registerCubits() async {
+  _registerFoodCubits();
+  _registerMartCubits();
+}
+
+void _registerFoodCubits() {
   _registerFoodCategoryCubit();
   _registerFavouriteCubit();
   _registerRecommendedCafeCubit();
@@ -16,6 +22,10 @@ Future<void> registerCubits() async {
   _registerCafeDetailsCubit();
   _registerCafeCartCubit();
   _registerOrderCubit();
+}
+
+void _registerMartCubits() {
+  _registerMartCategoriesCubit();
 }
 
 void _registerFoodCategoryCubit() {
@@ -57,5 +67,11 @@ void _registerCafeCartCubit() {
 void _registerOrderCubit() {
   locator.registerFactory<OrdersCubit>(
     () => OrdersCubit(locator.get()),
+  );
+}
+
+void _registerMartCategoriesCubit() {
+  locator.registerFactory<MartCategoriesCubit>(
+    () => MartCategoriesCubit(locator.get()),
   );
 }

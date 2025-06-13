@@ -4,16 +4,26 @@ import 'package:retail_app/features/food/home/domain/use_case/explore_cafe_use_c
 import 'package:retail_app/features/food/home/domain/use_case/food_category_use_case.dart';
 import 'package:retail_app/features/food/home/domain/use_case/recommended_cafe_use_case.dart';
 import 'package:retail_app/features/food/orders/domain/use_case/orders_use_case.dart';
+import 'package:retail_app/features/mart/home/domain/use_case/mart_categories_use_case.dart';
 
 import '../features/food/cafe_details/domain/use_case/cafe_details_use_case.dart';
 
 Future<void> registerUseCases() async {
+  _registerFoodUseCases();
+  _registerMartUseCases();
+}
+
+void _registerFoodUseCases() {
   _registerFoodCategoryUseCase();
   _registerFavouriteUseCase();
   _registerRecommendedCafeUseCase();
   _registerExploreCafeUseCase();
   _registerCafeDetailsUseCase();
   _registerOrderUseCase();
+}
+
+void _registerMartUseCases() {
+  _registerMartCategoriesUseCase();
 }
 
 void _registerFoodCategoryUseCase() {
@@ -49,5 +59,11 @@ void _registerCafeDetailsUseCase() {
 void _registerOrderUseCase() {
   locator.registerFactory<OrdersUseCase>(
     () => OrdersUseCase(),
+  );
+}
+
+void _registerMartCategoriesUseCase() {
+  locator.registerFactory<MartCategoriesUseCase>(
+    () => MartCategoriesUseCase(),
   );
 }

@@ -4,7 +4,6 @@ import 'package:retail_app/features/mart/common/widgets/bottom_nav_m_widget.dart
 import 'package:retail_app/features/mart/home/presentation/widgets/primary_categories_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
-import '../../../../../core/enums/app_enum.dart';
 import '../../../../../core/presentation/widgets/home_header/home_header_widget.dart';
 
 class HomePageM extends StatefulWidget {
@@ -33,9 +32,7 @@ class _HomePageMState extends State<HomePageM> {
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child: CustomScrollView(
               slivers: [
-                const HomeHeaderWidget(
-                  appType: AppType.mart,
-                ),
+                const HomeHeaderWidget(),
                 OffersWidget(offers: offers),
                 const PrimaryCategoriesWidget(),
                 const SliverToBoxAdapter(

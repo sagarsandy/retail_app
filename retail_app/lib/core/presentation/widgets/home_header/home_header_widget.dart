@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/core/enums/app_enum.dart';
 import 'package:retail_app/core/presentation/widgets/ss_app_switch_widget.dart';
+import 'package:retail_app/core/util/app_util.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
@@ -8,8 +9,7 @@ import 'header_search_box_widget.dart';
 import 'location_widget.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
-  final AppType appType;
-  const HomeHeaderWidget({super.key, required this.appType});
+  const HomeHeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class HomeHeaderWidget extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        " ${appType == AppType.food ? 'Food' : 'Grocery'}",
+                        " ${AppUtil().appType == AppType.food ? 'Food' : 'Grocery'}",
                         style: Theme.of(context).textTheme.custom(
-                              appType == AppType.food
+                              AppUtil().appType == AppType.food
                                   ? SSColors.actionF
                                   : SSColors.actionM,
                               fontSize: 22,
@@ -38,16 +38,16 @@ class HomeHeaderWidget extends StatelessWidget {
                       ),
                     ),
                     SSAppSwitchWidget(
-                      appType: appType,
+                      appType: AppUtil().appType,
                     ),
                   ],
                 ),
                 const SizedBox(height: 12),
                 LocationWidget(
-                  appType: appType,
+                  appType: AppUtil().appType,
                 ),
                 HeaderSearchBoxWidget(
-                  appType: appType,
+                  appType: AppUtil().appType,
                 ),
               ],
             ),

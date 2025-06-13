@@ -4,7 +4,6 @@ import 'package:retail_app/features/food/home/presentation/widgets/explore_top_c
 import 'package:retail_app/features/food/home/presentation/widgets/recommended/recommended_widget.dart';
 import 'package:retail_app/features/food/home/presentation/widgets/title_widget.dart';
 
-import '../../../../../core/enums/app_enum.dart';
 import '../../../../../core/presentation/widgets/home_header/home_header_widget.dart';
 import '../../../common/utils/widget_utils/bottom_nav_widget.dart';
 import '../widgets/food_category/food_category_widget.dart';
@@ -33,9 +32,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child: CustomScrollView(
               slivers: [
-                const HomeHeaderWidget(
-                  appType: AppType.food,
-                ),
+                const HomeHeaderWidget(),
                 OffersWidget(offers: offers),
                 const RecommendedWidget(),
                 const FoodCategoryWidget(),

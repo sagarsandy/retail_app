@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_app/core/enums/app_enum.dart';
+import 'package:retail_app/core/util/app_util.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
 import '../../../../app/router/ss_app_routes.dart';
@@ -75,6 +77,7 @@ class _LandingPageState extends State<LandingPage>
             top: MediaQuery.of(context).size.height / 2 - 150,
             child: GestureDetector(
               onTap: () {
+                AppUtil().appType = AppType.food;
                 context.goToPage(SSAppRoutes.foodHome);
               },
               child: Container(
@@ -97,6 +100,7 @@ class _LandingPageState extends State<LandingPage>
             top: MediaQuery.of(context).size.height / 2 + 50,
             child: GestureDetector(
               onTap: () {
+                AppUtil().appType = AppType.mart;
                 context.goToPage(SSAppRoutes.martHome);
               },
               child: Container(
