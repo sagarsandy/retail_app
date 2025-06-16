@@ -50,6 +50,7 @@ class _ProductListingPageState extends State<ProductListingPage> {
             child: Column(
               children: [
                 FiltersMWidget(),
+                SizedBox(height: 8), // Spacing between filters and products
                 Expanded(
                   child: ProductListingWidget(),
                 ),

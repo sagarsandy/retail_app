@@ -36,7 +36,7 @@ class PrimaryCategoryGridWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: () {
-                  context.goToPage(SSAppRoutes.martProductListing, extra: {
+                  context.pushToPage(SSAppRoutes.martProductListing, extra: {
                     'primaryCategory': martCategory.primaryCategories[index],
                   });
                 },
