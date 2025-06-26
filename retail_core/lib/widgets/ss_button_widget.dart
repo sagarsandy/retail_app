@@ -23,7 +23,7 @@ class SSButtonWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: isEnabled ? onTap : null,
       style: ElevatedButton.styleFrom(
-        backgroundColor: isEnabled ? SSColors.actionF : SSColors.grey1,
+        backgroundColor: isEnabled ? primaryColor : SSColors.grey1,
         surfaceTintColor: SSColors.primary1F, // Highlighted color
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

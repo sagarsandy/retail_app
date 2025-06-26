@@ -4,6 +4,7 @@ import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class SSCartQuantityButtonWidget extends StatefulWidget {
   final String title;
+  final bool isPrimary;
   final Color? primaryColor;
   final Function(int quantity)? onQuantityChanged;
   const SSCartQuantityButtonWidget({
@@ -11,6 +12,7 @@ class SSCartQuantityButtonWidget extends StatefulWidget {
     required this.title,
     this.primaryColor = SSColors.primary1F,
     this.onQuantityChanged,
+    this.isPrimary = true,
   });
 
   @override
@@ -45,8 +47,9 @@ class _SSCartQuantityButtonWidgetState
       child: ElevatedButton(
         onPressed: _quantity == 0 ? _incrementQuantity : null,
         style: ElevatedButton.styleFrom(
+          backgroundColor: widget.isPrimary ? SSColors.actionM : SSColors.white,
           padding: EdgeInsets.zero,
-          side: const BorderSide(color: SSColors.actionM, width: 1),
+          side: BorderSide(color: SSColors.actionM, width: 1),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         ),
         child:
@@ -55,15 +58,19 @@ class _SSCartQuantityButtonWidgetState
                   child: Text(
                     widget.title,
                     style: Theme.of(context).textTheme.medium(
-                      SSColors.actionM,
+                      widget.isPrimary ? SSColors.white : SSColors.actionM,
                       fontWeight: FontWeightType.bold,
                     ),
                   ),
                 )
                 : Container(
                   decoration: BoxDecoration(
-                    color: SSColors.white,
-                    border: Border.all(color: SSColors.actionM, width: 1),
+                    color: widget.isPrimary ? SSColors.actionM : SSColors.white,
+                    border: Border.all(
+                      color:
+                          widget.isPrimary ? SSColors.white : SSColors.actionM,
+                      width: 1,
+                    ),
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Row(
@@ -77,10 +84,13 @@ class _SSCartQuantityButtonWidgetState
                             minWidth: 20,
                             minHeight: 20,
                           ),
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.remove,
                             size: 16,
-                            color: SSColors.actionM,
+                            color:
+                                widget.isPrimary
+                                    ? SSColors.white
+                                    : SSColors.actionM,
                           ),
                           onPressed: _decrementQuantity,
                         ),
@@ -91,7 +101,9 @@ class _SSCartQuantityButtonWidgetState
                           _quantity.toString(),
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.medium(
-                            SSColors.actionM,
+                            widget.isPrimary
+                                ? SSColors.white
+                                : SSColors.actionM,
                             fontWeight: FontWeightType.bold,
                           ),
                         ),
@@ -104,10 +116,13 @@ class _SSCartQuantityButtonWidgetState
                             minWidth: 20,
                             minHeight: 20,
                           ),
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.add,
                             size: 16,
-                            color: SSColors.actionM,
+                            color:
+                                widget.isPrimary
+                                    ? SSColors.white
+                                    : SSColors.actionM,
                           ),
                           onPressed: _incrementQuantity,
                         ),

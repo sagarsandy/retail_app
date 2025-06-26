@@ -4,7 +4,6 @@ import 'package:retail_app/features/mart/home/domain/models/category_test_data.d
 import 'package:retail_app/features/mart/home/domain/models/mart_category.dart';
 import 'package:retail_app/features/mart/home/domain/models/primary_category.dart';
 import 'package:retail_app/features/mart/product/presentation/widgets/categories_m_widget.dart';
-import 'package:retail_app/features/mart/product/presentation/widgets/filters_m_widget.dart';
 import 'package:retail_app/features/mart/product/presentation/widgets/product_listing_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
@@ -49,8 +48,8 @@ class _ProductListingPageState extends State<ProductListingPage> {
           Expanded(
             child: Column(
               children: [
-                FiltersMWidget(),
-                SizedBox(height: 8), // Spacing between filters and products
+                // FiltersMWidget(),
+                SizedBox(height: 2), // Spacing between filters and products
                 Expanded(
                   child: ProductListingWidget(),
                 ),

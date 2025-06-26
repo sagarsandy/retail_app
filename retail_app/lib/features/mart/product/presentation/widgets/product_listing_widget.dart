@@ -21,7 +21,7 @@ class ProductListingWidget extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () {
-            context.goToPage(SSAppRoutes.martProductListing,
+            context.pushToPage(SSAppRoutes.martProductDetails,
                 extra: {'primaryCategory': {}});
           },
           child: const ProductWidget(),

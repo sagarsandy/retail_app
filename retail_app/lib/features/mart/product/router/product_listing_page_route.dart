@@ -29,7 +29,7 @@ class ProductListingPageRoute extends SSPageRoute {
             context: context,
             state: state,
             child: SSBaseWidget(
-              title: "Mart Home Page",
+              title: "Mart Product Listing Page",
               page: ProductListingPage(primaryCategory: primaryCategory),
             ),
           );

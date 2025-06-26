@@ -4,6 +4,8 @@ import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 import 'package:retail_core/widgets/ss_cart_quantity_button_widget.dart';
 
+import '../../../common/widgets/product_price_widget.dart';
+
 class ProductWidget extends StatelessWidget {
   const ProductWidget({super.key});
 
@@ -48,6 +50,7 @@ class ProductWidget extends StatelessWidget {
                         width: 75,
                         child: SSCartQuantityButtonWidget(
                           title: "Add",
+                          isPrimary: false,
                           onQuantityChanged: (quantity) {
                             // Handle quantity change
                           },
@@ -84,25 +87,9 @@ class ProductWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 2),
-                Row(
-                  children: [
-                    const SizedBox(width: 4),
-                    Text(
-                      "₹99",
-                      style: Theme.of(context).textTheme.medium(
-                            SSColors.black,
-                            fontWeight: FontWeightType.bold,
-                          ),
-                    ),
-                    const SizedBox(width: 4),
-                    Text(
-                      "₹199",
-                      style: Theme.of(context).textTheme.small(
-                            SSColors.black,
-                            isStrikeThrough: true,
-                          ),
-                    ),
-                  ],
+                const ProductPriceWidget(
+                  price: "99",
+                  originalPrice: "199",
                 ),
               ],
             ),
