@@ -9,6 +9,7 @@ import 'package:retail_app/features/landing/router/landing_page_route.dart';
 import 'package:retail_app/features/login/router/login_page_route.dart';
 import 'package:retail_app/features/mart/cart/router/cart_m_page_route.dart';
 import 'package:retail_app/features/mart/home/router/home_page_m_route.dart';
+import 'package:retail_app/features/mart/orders/router/orders_m_page_route.dart';
 import 'package:retail_app/features/mart/product/router/product_listing_page_route.dart';
 import 'package:retail_app/features/mart/product_detail/router/product_m_detail_page_route.dart';
 
@@ -41,6 +42,7 @@ class SSRouteInitializer {
       ProductListingPageRoute(rootNavigatorKey).getRoute(),
       ProductMDetailPageRoute(rootNavigatorKey).getRoute(),
       CartMPageRoute(rootNavigatorKey).getRoute(),
+      OrdersMPageRoute(rootNavigatorKey).getRoute(),
     ];
   }
 }

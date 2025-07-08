@@ -23,6 +23,7 @@ enum SSAppRoutes implements SSRouteInfo {
   martHome('martHome', 'martHome'),
   martProductListing('martProductListing', 'martProductListing'),
   martProductDetails('martProductDetails', 'martProductDetails'),
+  martOrders('martOrders', 'martOrders'),
   martCart('martCart', 'martCart');
 
   @override

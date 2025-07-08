@@ -34,7 +34,7 @@ class _BottomNavMWidgetState extends State<BottomNavMWidget> {
   final List<SSRouteInfo> _routes = [
     SSAppRoutes.martHome,
     SSAppRoutes.martCart,
-    SSAppRoutes.cafeOrders,
+    SSAppRoutes.martOrders,
     SSAppRoutes.cafeOptionsMenu,
   ];
 

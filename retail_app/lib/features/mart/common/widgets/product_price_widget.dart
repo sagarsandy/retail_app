@@ -16,14 +16,6 @@ class ProductPriceWidget extends StatelessWidget {
     return Row(
       children: [
         const SizedBox(width: 4),
-        Text(
-          "₹$price",
-          style: Theme.of(context).textTheme.medium(
-                SSColors.black,
-                fontWeight: FontWeightType.bold,
-              ),
-        ),
-        const SizedBox(width: 4),
         Visibility(
           visible: originalPrice != null,
           child: Text(
@@ -33,6 +25,14 @@ class ProductPriceWidget extends StatelessWidget {
                   isStrikeThrough: true,
                 ),
           ),
+        ),
+        const SizedBox(width: 4),
+        Text(
+          "₹$price",
+          style: Theme.of(context).textTheme.medium(
+                SSColors.black,
+                fontWeight: FontWeightType.bold,
+              ),
         ),
       ],
     );
