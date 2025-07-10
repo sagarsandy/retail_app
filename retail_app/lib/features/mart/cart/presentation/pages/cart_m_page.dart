@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:retail_app/features/mart/cart/presentation/widgets/address_widget.dart';
 import 'package:retail_app/features/mart/cart/presentation/widgets/apply_coupon_widget.dart';
 import 'package:retail_app/features/mart/cart/presentation/widgets/cart_order_summary_widget.dart';
 import 'package:retail_app/features/mart/cart/presentation/widgets/cart_product_listing_widget.dart';
+import 'package:retail_app/features/mart/common/widgets/address_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/widgets/ss_button_widget.dart';
 

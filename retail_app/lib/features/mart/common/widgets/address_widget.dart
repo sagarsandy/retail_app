@@ -3,7 +3,8 @@ import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
 class AddressWidget extends StatelessWidget {
-  const AddressWidget({super.key});
+  final bool isEditable;
+  const AddressWidget({super.key, this.isEditable = false});
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +27,15 @@ class AddressWidget extends StatelessWidget {
                     ),
               ),
               const Spacer(),
-              Text(
-                "Change",
-                style: Theme.of(context).textTheme.regular(
-                      SSColors.actionM,
-                      isUnderLine: true,
-                    ),
+              Visibility(
+                visible: isEditable,
+                child: Text(
+                  "Change",
+                  style: Theme.of(context).textTheme.regular(
+                        SSColors.actionM,
+                        isUnderLine: true,
+                      ),
+                ),
               ),
             ],
           ),
