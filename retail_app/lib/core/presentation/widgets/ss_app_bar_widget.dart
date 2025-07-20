@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
-import 'package:retail_app/core/enums/app_enum.dart';
-import 'package:retail_app/core/util/app_util.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 import 'package:retail_core/widgets/ss_icon_button.dart';
@@ -25,9 +24,7 @@ class SSAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppUtil().appType == AppType.food
-          ? SSColors.surfaceF
-          : SSColors.surfaceM,
+      backgroundColor: Colors.transparent.surface(),
       title: showTitle
           ? Text(
               title,

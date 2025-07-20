@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/core/presentation/widgets/ss_app_bar_widget.dart';
 import 'package:retail_app/features/mart/home/domain/models/category_test_data.dart';
 import 'package:retail_app/features/mart/home/domain/models/mart_category.dart';
@@ -30,7 +31,7 @@ class _ProductListingPageState extends State<ProductListingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SSColors.surfaceM,
+      backgroundColor: SSColors.transparent.surface(),
       appBar: SSAppBarWidget(
         showTitle: true,
         title: widget.primaryCategory?.name ?? 'Products',

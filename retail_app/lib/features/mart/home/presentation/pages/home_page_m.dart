@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/core/presentation/widgets/ss_offers_widget.dart';
 import 'package:retail_app/features/mart/common/widgets/bottom_nav_m_widget.dart';
 import 'package:retail_app/features/mart/home/presentation/widgets/primary_categories_widget.dart';
@@ -25,7 +26,7 @@ class _HomePageMState extends State<HomePageM> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SSColors.surfaceM,
+      backgroundColor: SSColors.transparent.surface(),
       body: Stack(
         children: [
           Padding(

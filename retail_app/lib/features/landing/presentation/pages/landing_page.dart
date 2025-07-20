@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
 import 'package:retail_app/core/enums/app_enum.dart';
 import 'package:retail_app/core/util/app_util.dart';
+import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
 import '../../../../app/router/ss_app_routes.dart';
@@ -43,7 +44,7 @@ class _LandingPageState extends State<LandingPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.95),
+      backgroundColor: SSColors.white.withOpacity(0.95),
       body: Stack(
         children: [
           Positioned(

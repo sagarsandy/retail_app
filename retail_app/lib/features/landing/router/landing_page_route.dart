@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:retail_app/core/presentation/pages/ss_base_widget.dart';
 import 'package:retail_app/features/landing/presentation/pages/landing_page.dart';
 
 import '../../../app/router/ss_app_routes.dart';
@@ -21,7 +22,10 @@ class LandingPageRoute extends SSPageRoute {
           return buildPageWithOutAnimation(
             context: context,
             state: state,
-            child: const LandingPage(),
+            child: SSBaseWidget(
+              title: 'Landing Page',
+              page: const LandingPage(),
+            ),
           );
         },
       );

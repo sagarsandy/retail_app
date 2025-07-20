@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/features/mart/order_details/presentation/widgets/order_details_order_summary_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
@@ -11,14 +12,14 @@ class OrderDetailsMPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: SSColors.surfaceM,
-      appBar: SSAppBarWidget(
+    return Scaffold(
+      backgroundColor: SSColors.transparent.surface(),
+      appBar: const SSAppBarWidget(
         showTitle: true,
         title: 'Order Details',
         showLeadingIcon: true,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Column(

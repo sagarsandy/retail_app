@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
-import 'package:retail_core/theme/ss_theme_ext.dart';
 
+import '../../../../global_menu/presentation/widgets/global_menu_widget.dart';
 import '../../../common/utils/widget_utils/bottom_nav_widget.dart';
 
 class MenuPage extends StatefulWidget {
@@ -15,15 +16,14 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      backgroundColor: SSColors.transparent.surface(),
+      body: const Stack(
         children: [
-          Center(
-            child: Text(
-              'Menu Page',
-              style: Theme.of(context).textTheme.extraLarge(SSColors.primary1F),
-            ),
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: GlobalMenuWidget(),
           ),
-          const Positioned(
+          Positioned(
             bottom: 0,
             left: 0,
             right: 0,

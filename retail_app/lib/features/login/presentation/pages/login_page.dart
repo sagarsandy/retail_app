@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/core/presentation/pages/ss_base_widget.dart';
 import 'package:retail_app/features/login/presentation/widgets/phone_number_text_field.dart';
 import 'package:retail_app/features/login/presentation/widgets/terms_policy_text_widget.dart';
@@ -41,7 +42,7 @@ class _LoginPageBodyState extends State<LoginPageBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SSColors.surfaceF,
+      backgroundColor: SSColors.transparent.surface(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

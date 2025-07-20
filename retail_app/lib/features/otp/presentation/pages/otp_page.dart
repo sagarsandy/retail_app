@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/core/presentation/widgets/ss_app_bar_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
@@ -21,7 +22,7 @@ class _OtpPageState extends State<OtpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const SSAppBarWidget(showTitle: false, title: ""),
-      backgroundColor: SSColors.surfaceF,
+      backgroundColor: SSColors.transparent.surface(),
       body: Padding(
         padding: const EdgeInsets.all(26.0),
         child: Column(
@@ -136,7 +137,7 @@ class _OtpPageState extends State<OtpPage> {
                   TextSpan(
                     text: 'Resend',
                     style: Theme.of(context).textTheme.regular(
-                          SSColors.actionF,
+                          SSColors.transparent.action(),
                           isUnderLine: true,
                         ),
                     recognizer: TapGestureRecognizer()

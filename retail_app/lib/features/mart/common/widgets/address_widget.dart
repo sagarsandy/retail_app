@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
@@ -32,7 +33,7 @@ class AddressWidget extends StatelessWidget {
                 child: Text(
                   "Change",
                   style: Theme.of(context).textTheme.regular(
-                        SSColors.actionM,
+                        SSColors.transparent.action(),
                         isUnderLine: true,
                       ),
                 ),

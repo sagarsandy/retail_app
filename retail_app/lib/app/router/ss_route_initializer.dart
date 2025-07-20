@@ -5,6 +5,10 @@ import 'package:retail_app/features/food/home/router/home_page_route.dart';
 import 'package:retail_app/features/food/menu/router/menu_page_route.dart';
 import 'package:retail_app/features/food/order_details/router/orders_details_page_route.dart';
 import 'package:retail_app/features/food/orders/router/orders_page_route.dart';
+import 'package:retail_app/features/global_menu/about_us/router/about_us_page_route.dart';
+import 'package:retail_app/features/global_menu/address_book/router/address_book_page_route.dart';
+import 'package:retail_app/features/global_menu/refer_earn/router/refer_earn_page_route.dart';
+import 'package:retail_app/features/global_menu/support/router/support_page_route.dart';
 import 'package:retail_app/features/landing/router/landing_page_route.dart';
 import 'package:retail_app/features/login/router/login_page_route.dart';
 import 'package:retail_app/features/mart/cart/router/cart_m_page_route.dart';
@@ -45,6 +49,10 @@ class SSRouteInitializer {
       CartMPageRoute(rootNavigatorKey).getRoute(),
       OrdersMPageRoute(rootNavigatorKey).getRoute(),
       OrderDetailsPageMRoute(rootNavigatorKey).getRoute(),
+      AboutUsPageRoute(rootNavigatorKey).getRoute(),
+      AddressBookPageRoute(rootNavigatorKey).getRoute(),
+      ReferEarnPageRoute(rootNavigatorKey).getRoute(),
+      SupportPageRoute(rootNavigatorKey).getRoute(),
     ];
   }
 }

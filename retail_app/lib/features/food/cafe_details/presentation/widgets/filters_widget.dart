@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/features/food/common/enums/food_type.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
@@ -45,14 +46,16 @@ class FiltersWidgetState extends State<FiltersWidget> {
               borderRadius: BorderRadius.circular(30), // more rounded
               side: BorderSide(
                 width: isSelected ? 2 : 1,
-                color: isSelected ? SSColors.actionF : SSColors.grey1,
+                color:
+                    isSelected ? SSColors.transparent.action() : SSColors.grey1,
               ), // purple border
             ),
             selectedColor: SSColors.transparent,
-            checkmarkColor: isSelected ? SSColors.actionF : SSColors.black,
+            checkmarkColor:
+                isSelected ? SSColors.transparent.action() : SSColors.black,
             backgroundColor: SSColors.white,
             labelStyle: Theme.of(context).textTheme.regular(
-                  isSelected ? SSColors.actionF : SSColors.black,
+                  isSelected ? SSColors.transparent.action() : SSColors.black,
                   fontWeight: isSelected
                       ? FontWeightType.extraBold
                       : FontWeightType.bold,

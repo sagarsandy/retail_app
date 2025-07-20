@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 import 'package:retail_core/theme/ss_theme_ext.dart';
 
@@ -24,7 +25,7 @@ class OrderDetailsProductWidget extends StatelessWidget {
             width: 70,
             height: 80,
             decoration: BoxDecoration(
-              color: SSColors.surfaceM,
+              color: SSColors.transparent.surface(),
               borderRadius: BorderRadius.circular(8),
             ),
             child: ClipRRect(

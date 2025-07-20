@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/core/presentation/widgets/ss_bottm_nav_bar.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
@@ -59,7 +60,7 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
         icons: _icons,
         titles: _titles,
         selectedIndex: widget.activeIndex,
-        actionColor: SSColors.actionF,
+        actionColor: SSColors.transparent.action(),
         onItemTap: (index) {
           _onItemTapped(index);
         },

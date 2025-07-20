@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
 class ProductImagesScrollWidget extends StatefulWidget {
@@ -19,7 +20,7 @@ class ProductImagesScrollWidgetState extends State<ProductImagesScrollWidget> {
   final List<Color> _offerColors = [
     SSColors.primary1M,
     SSColors.primary2M,
-    SSColors.actionM,
+    SSColors.transparent.action(),
   ];
 
   @override

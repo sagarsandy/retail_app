@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/di/service_locator.dart';
 import 'package:retail_app/features/food/cafe_details/cubit/cafe_details_cubit.dart';
 import 'package:retail_app/features/food/common/model/cafe.dart';
@@ -37,7 +38,7 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
   Widget build(BuildContext context) {
     if (widget.cafe == null) {
       return Scaffold(
-        backgroundColor: SSColors.surfaceF,
+        backgroundColor: SSColors.transparent.surface(),
         appBar: SSAppBarWidget(
           showTitle: _showTitle,
           title: "Cafe not found",
@@ -48,7 +49,7 @@ class _CafeDetailsPageState extends State<CafeDetailsPage> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: const CafeCartWidget(),
-      backgroundColor: SSColors.surfaceF,
+      backgroundColor: SSColors.transparent.surface(),
       appBar: SSAppBarWidget(
         showTitle: _showTitle,
         title: widget.cafe!.name,

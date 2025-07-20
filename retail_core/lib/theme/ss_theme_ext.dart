@@ -15,6 +15,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 8,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough
@@ -35,6 +36,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 10,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough
@@ -55,6 +57,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 12,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough
@@ -75,6 +78,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 14,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough
@@ -95,6 +99,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 16,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough
@@ -115,6 +120,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: 20,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough
@@ -136,6 +142,7 @@ extension BaseTextTheme on TextTheme {
       fontFamily: fontFamily(fontWeight: getFontWeight(fontWeight)),
       fontSize: fontSize,
       decorationThickness: 3.0,
+      decorationColor: color,
       decoration:
           isStrikeThrough
               ? TextDecoration.lineThrough

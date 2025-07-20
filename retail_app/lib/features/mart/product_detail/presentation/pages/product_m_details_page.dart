@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_app_routes.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/features/mart/common/widgets/product_price_widget.dart';
 import 'package:retail_app/features/mart/product_detail/presentation/widgets/product_images_scroll_widget.dart';
 import 'package:retail_core/theme/ss_colors.dart';
@@ -16,7 +17,7 @@ class ProductMDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SSColors.surfaceM,
+      backgroundColor: SSColors.transparent.surface(),
       appBar: SSAppBarWidget(
         showTitle: true,
         title: 'Product details',

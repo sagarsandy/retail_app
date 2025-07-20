@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retail_app/app/router/ss_route_utility.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_core/theme/ss_colors.dart';
 
 import '../../../../../app/router/ss_app_routes.dart';
@@ -28,11 +29,11 @@ class OrdersListItemWidget extends StatelessWidget {
                 color: SSColors.white.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 16.0, right: 8.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16.0, right: 8.0),
                 child: Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -53,11 +54,11 @@ class OrdersListItemWidget extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     Icon(
                       Icons.chevron_right,
                       size: 40,
-                      color: SSColors.actionM,
+                      color: SSColors.transparent.action(),
                     ),
                   ],
                 ),

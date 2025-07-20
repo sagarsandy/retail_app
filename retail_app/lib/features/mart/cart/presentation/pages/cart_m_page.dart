@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retail_app/core/ext/color_ext.dart';
 import 'package:retail_app/features/mart/cart/presentation/widgets/apply_coupon_widget.dart';
 import 'package:retail_app/features/mart/cart/presentation/widgets/cart_order_summary_widget.dart';
 import 'package:retail_app/features/mart/cart/presentation/widgets/cart_product_listing_widget.dart';
@@ -14,7 +15,7 @@ class CartMPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SSColors.surfaceM,
+      backgroundColor: SSColors.transparent.surface(),
       appBar: const SSAppBarWidget(
         showTitle: true,
         title: 'Checkout',
@@ -43,7 +44,7 @@ class CartMPage extends StatelessWidget {
         ),
         child: SSButtonWidget(
           elevation: 0,
-          primaryColor: SSColors.actionM,
+          primaryColor: SSColors.transparent.action(),
           title: "Checkout",
           onTap: () {},
         ),
